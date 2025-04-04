@@ -1,8 +1,10 @@
-## Week 1 (08 march, 2025)
+## Week 1 (03-09 march, 2025)
 - Discussed project topic
 - Assigned roles
-- Created a draft for project wireframe
+- Created project wireframe and roadmap 
 
-## Week 2 (13 March, 2025)
-- Project roadmap and wireframe uploaded
-- Code for home page uploaded
+## Week 2 (10-16 March, 2025)
+- Worked on arrival and departure page
+
+## Week 3 (17-23 March, 2025)
+-Worked on login page and main dashboard
