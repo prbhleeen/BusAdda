@@ -8,7 +8,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: Arial, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Login container */
@@ -27,7 +27,11 @@ body {
     width: 80px;  
     height: auto;
     display: block;
-    margin: 0 auto 10px;}
+    margin: -10px;
+    border-radius: 50px;
+}
+
+
 
 /* Login form styling */
 .login-form {
@@ -38,7 +42,7 @@ body {
 }
 
 h2 {
-    color: white;
+    color: black;
     margin-bottom: 15px;
     font-size: 24px;
     font-weight: bolder;
@@ -47,12 +51,13 @@ h2 {
 /* Input fields */
 input {
     width: 100%;
-    padding: 12px;
+    padding: 15px;
+    
     margin: 8px 0;
-    border: 3px solid rgba(255, 255, 255, 0.5);
+    border: 3px solid rgba(67, 67, 67, 0.21);
     border-radius: 6px;
     background: rgba(255, 255, 255, 0.1);
-    color: white;
+    color: black;
     outline: none;
     font-size: 16px;
     transition: 0.3s ease-in-out;
@@ -60,12 +65,12 @@ input {
 
 /* Placeholder text color */
 input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(67, 67, 67, 0.7);
 }
 
 /*  Input Hover & Focus Effect */
 input:hover {
-    border-color: #fff;
+    border-color: #3498db;
 }
 
 input:focus {
@@ -94,6 +99,7 @@ button:hover {
     transform: scale(1.05);
     box-shadow: 0px 4px 12px rgba(41, 128, 185, 0.5);
 }
+
 
 /* Responsiveness */
 @media (max-width: 400px) {
