@@ -1,0 +1,103 @@
+/* Set full-page background */
+body {
+    margin: 0;
+    padding: 0;
+    background: url("https://raw.githubusercontent.com/Sunaina-04/SCM-grp-Project/3ad58fda41ea7c936f6f8193b3102a990d1c35a3/background%20image.jpg") 
+                no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Login container */
+.login-container {
+    background: rgba(255, 255, 255, 0.145); 
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px); 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 350px;
+}
+
+/* Logo styling */
+.logo {
+    width: 80px;  
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;}
+
+/* Login form styling */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+h2 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+/* Input fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Placeholder text color */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/*  Input Hover & Focus Effect */
+input:hover {
+    border-color: #fff;
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #3498db;
+    box-shadow: 0px 0px 10px rgba(52, 152, 219, 0.6);
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3490db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/*  Button Hover Effect */
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(41, 128, 185, 0.5);
+}
+
+/* Responsiveness */
+@media (max-width: 400px) {
+    .login-container {
+        width: 90%;
+    }
+}

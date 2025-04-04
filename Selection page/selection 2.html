@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Page</title>
+    <link rel="stylesheet" href="selection 2.css">
+</head>
+<body>
+
+    <div class="selection-container">
+        <h2 id="welcome-message">Welcome, User!</h2>
+        <button class="select-btn" onclick="window.location.href='arrival.html'">Arrival</button>
+        <button class="select-btn" onclick="window.location.href='departure.html'">Departure</button>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get("name");
+
+        if (name) {
+            document.getElementById("welcome-message").textContent = `Welcome, ${decodeURIComponent(name)}!`;
+        }
+    </script>
+
+</body>
+</html>
