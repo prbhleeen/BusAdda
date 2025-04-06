@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #6e89bd, #81a8d2);
+    background: linear-gradient(135deg, #f2efe7, #9acbd0); /* Updated colors */
     height: 100vh;
     display: flex;
     align-items: center;
@@ -24,7 +24,7 @@ body {
 
 /* Heading */
 h2 {
-    color: white;
+    color: #006a71; /* Updated color */
     margin-bottom: 20px;
     font-size: 26px;
     font-weight: bolder;
@@ -35,8 +35,8 @@ button {
     width: 100%;
     padding: 14px;
     margin: 10px 0;
-    background-color: #447da0;
-    color: white;
+    background-color: #48a6a7; /* Updated color */
+    color: #f2efe7; /* Updated color */
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -47,7 +47,7 @@ button {
 
 /* Button hover effect */
 button:hover {
-    background-color: #2980b9;
+    background-color: #9acbd0; /* Updated color */
     transform: scale(1.05);
     box-shadow: 0px 4px 12px rgba(41, 128, 185, 0.5);
 }

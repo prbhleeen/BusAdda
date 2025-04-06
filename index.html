@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon"type="image/png" href="/pictures/logo.png">
+    <link rel="icon"type="image/png" href="pictures/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="/pages/login.css"> 
+    <link rel="stylesheet" href="pages/login.css"> 
 </head>
 <body> 
 
     <div class="login-container">
         <form class="login-form" onsubmit="redirectToSelection(event)">
-            <img src="/pictures/logo.jpg" alt="Bus Adda Logo" class="logo">  
+            <img src="pictures/logo.jpg" alt="Bus Adda Logo" class="logo">  
             <h2>Welcome to Bus Adda!</h2>
             <input type="text" id="employee_name" name="employee_name" placeholder="EMPLOYEE NAME"  
                    pattern="[A-Za-z\s]+" title="Only alphabets and spaces are allowed" required>
@@ -21,14 +21,16 @@
         </form>
     </div>
 
+
     <script>
         function redirectToSelection(event) {
             event.preventDefault(); // Prevent default form submission
             
             let name = document.getElementById("employee_name").value.trim();
-            
+            console.log("Employee Name:", name); 
             if (name !== "") {  // Prevents empty name submission
-                window.location.href = `/pages/dashboard.html?name=${encodeURIComponent(name)}`;
+                console.log("Redirecting to dashboard.html"); 
+                window.location.href = `pages/dashboard.html?name=${encodeURIComponent(name)}`;
             } else {
                 alert("Please enter your name.");
             }
