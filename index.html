@@ -24,11 +24,11 @@
 
     <script>
         function redirectToSelection(event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault(); 
             
             let name = document.getElementById("employee_name").value.trim();
             console.log("Employee Name:", name); 
-            if (name !== "") {  // Prevents empty name submission
+            if (name !== "") {  
                 console.log("Redirecting to dashboard.html"); 
                 window.location.href = `pages/dashboard.html?name=${encodeURIComponent(name)}`;
             } else {

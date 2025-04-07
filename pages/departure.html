@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-    <link rel="icon"type="image/png" href="pictures/logo.png">
+<head>
+    <link rel="icon" type="image/png" href="SCM-grp-Project/pictures/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bus Adda</title>
@@ -10,16 +10,19 @@
 <body>
     <div class="header">
         <div class="logo-title">
-            <img src="pictures/logo.jpg" alt="Logo">
+            <img src="https://raw.githubusercontent.com/Sunaina-04/SCM-grp-Project/efac2e27e305bab77bfaa3d98653cbe54a23d6a8/pictures/logo.png" alt="Logo">
             <h1>Bus Adda</h1>
         </div>
         <div class="auth-buttons">
-            <button>Login</button>
-            <button>Sign Up</button>
+            <button class="select-btn" onclick="window.location.href='dashboard.html'">Home</button>
         </div>
     </div>
     
     <div class="container">
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search by Route Number" oninput="filterRows()">
+            <span class="search-icon">&#128269;</span>
+        </div>
         <table>
             <thead>
                 <tr>
