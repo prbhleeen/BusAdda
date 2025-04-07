@@ -7,4 +7,9 @@
 - Worked on arrival and departure page
 
 ## Week 3 (17-23 March, 2025)
--Worked on login page and main dashboard
+- Worked on login page and main dashboard
+
+## Week 4-5 (24-06 April, 2025)
+- Styling changes made
+- Overall Frontend development
+- Assigned work for backend
