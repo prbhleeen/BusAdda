@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="SCM-grp-Project/pictures/logo.png">
+    <link rel="icon" type="image/png" href="/static/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bus Adda</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Bus Departure Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='arrival.css') }}">
+    <link rel="icon" type="image/png" href="/static/logo.png">
+
 </head>
 <body>
     <div class="header">
         <div class="logo-title">
-            <img src="https://raw.githubusercontent.com/Sunaina-04/SCM-grp-Project/efac2e27e305bab77bfaa3d98653cbe54a23d6a8/pictures/logo.png" alt="Logo">
+            <img src="/static/logo.png" alt="Logo">
             <h1>Bus Adda</h1>
         </div>
-         <div class="auth-buttons">
-          <button class="select-btn" onclick="window.location.href='dashboard.html'">Home</button>
-        </div> 
+        <div class="auth-buttons">
+            <button class="select-btn" onclick="window.location.href='/dashboard'">Home</button>
+        </div>
     </div>
     
     <div class="container">
@@ -28,7 +30,7 @@
                 <tr>
                     <th>Select</th>
                     <th>Route Number</th>
-                    <th>Arrival Time</th>
+                    <th>Departure Time</th>
                 </tr>
             </thead>
             <tbody id="busTable">
@@ -36,6 +38,6 @@
             </tbody>
         </table>
     </div>
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
