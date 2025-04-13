@@ -9,17 +9,17 @@ body {
     align-items: center;
     justify-content: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333; /* Default text color */
+    color: #333; 
     overflow: hidden;
 }
 
-/* Geometric shapes */
+
 body::before, body::after {
     content: '';
     position: absolute;
     width: 200px;
     height: 200px;
-    background: #48a6a7; /* Updated color */
+    background: #48a6a7; 
     border-radius: 50%;
     opacity: 0.5;
     animation: float 6s ease-in-out infinite;
@@ -96,3 +96,14 @@ button {
 button:hover {
     background-color: #FADA7A;
 }
+
+.login-container a{
+    color: #333;
+    text-decoration: none;
+}
+
+.login-container a:hover{
+    color: #48a6a7;
+    text-decoration: underline;
+}
+
