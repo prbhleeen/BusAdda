@@ -23,8 +23,6 @@
 2. Select whether you're logging an **arrival** or **departure**.
 3. Click the checkbox to mark the exact time of arrival or departure.
 
-### 📜 Licence
-This project is licensed under **MIT License**.
 
 ### 👩‍💻 Credits
 Special thanks to the contributors:
