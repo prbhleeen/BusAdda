@@ -44,5 +44,5 @@ Special thanks to the contributors:
 
 ### 🌐 Live Demo
 
-Try it out here 👉 [Bus Adda Live]
+Try it out here 👉 https://sunaina-04.github.io/BusAdda/
 
