@@ -26,8 +26,8 @@
 
 Make sure the following are installed on your system:
 
-•⁠  ⁠[XAMPP](https://www.apachefriends.org/index.html) (includes Apache and MySQL)
-•⁠  ⁠A code editor (like VS Code)
+- ⁠[XAMPP](https://www.apachefriends.org/index.html) (includes Apache and MySQL)
+- ⁠A code editor (like VS Code)
 
 ---
 
@@ -35,42 +35,39 @@ Make sure the following are installed on your system:
 
 #### 1. 🧰 Install XAMPP
 
-•⁠  ⁠Download and install XAMPP from the official [XAMPP website](https://www.apachefriends.org/index.html).
-•⁠  ⁠Launch the XAMPP Control Panel and *start Apache and MySQL*.
+- ⁠Download and install XAMPP from the official [XAMPP website](https://www.apachefriends.org/index.html).
+- Launch the XAMPP Control Panel and *start Apache and MySQL*.
 
 #### 2. 📁 Project Folder
 
-•⁠  ⁠Clone this repository:
-  ⁠ bash
-  git clone https://github.com/your-username/your-repo-name.git
+- Clone this repository:
+  ```git clone https://github.com/your-username/your-repo-name.git```
    ⁠
-•⁠  ⁠Move the project folder to the ⁠ htdocs ⁠ directory inside your XAMPP installation.  
-  For example:  
-  ⁠ C:\xampp\htdocs\your-repo-name ⁠
+- ⁠Move the project folder to the ⁠ htdocs ⁠ directory inside your XAMPP installation.  
 
 #### 3. 🗄️ Create MySQL Database and Table
 
-•⁠  ⁠Open [phpMyAdmin](http://localhost/phpmyadmin)
-•⁠  ⁠Create a new database (e.g., ⁠ project_db ⁠)
-•⁠  ⁠Run the following SQL to create the required table:
+- ⁠Open [phpMyAdmin](http://localhost/phpmyadmin)
+- Create a new database (e.g., ⁠ project_db ⁠)
+- Run the following SQL to create the required table:
 
-  ⁠ sql
+```
   CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     employee_id VARCHAR(50) NOT NULL UNIQUE,
     name VARCHAR(100) NOT NULL
   );
-   ⁠
+```
 
-  _You can also import the provided ⁠ .sql ⁠ file
+- You can also import the provided ⁠ .sql ⁠ file
 
 #### 4. 🚀 Run the Project
 
-•⁠  ⁠Start Apache and MySQL in the XAMPP Control Panel
-•⁠  ⁠Open your browser and go to:  
+- ⁠Start Apache and MySQL in the XAMPP Control Panel
+- ⁠Open your browser and go to:  
   [http://localhost/your-repo-name](http://localhost/your-repo-name)
 
-  ---
+---
   
 ### 📌 How to Use:
 1. Enter your official ID on the login page.
