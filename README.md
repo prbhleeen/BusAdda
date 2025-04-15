@@ -26,7 +26,6 @@
 <li>Simply click on the checkbox to mark the time of arrival/departure. </li>
 </ol>
 
-<h3>Add last updated on 19/03.</h3>
 <h3>Credits</h3>
 Thanks to the following contributors:
 <dl>
