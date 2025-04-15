@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 import mysql.connector
 
-app = Flask(_name_)
+app = Flask(__name__)
 app.secret_key = 'supersecretkey'
 
 # Database connection
@@ -20,26 +20,23 @@ def login():
         employee_id = request.form.get('employee_id')
         employee_name = request.form.get('employee_name')
 
-        query = "SELECT * FROM users WHERE employee_id = %s"
-        cursor.execute(query, (employee_id,))
+        cursor.execute("SELECT * FROM users WHERE employee_id = %s", (employee_id,))
         result = cursor.fetchone()
 
         if result:
-            # Assuming result[0]=id, result[1]=name
-            if result[1].lower() == employee_name.lower():  # Case-insensitive match
+            if result[1].lower() == employee_name.lower():  # assuming result[1] is name
                 session['employee_id'] = employee_id
                 session['employee_name'] = result[1]
-                flash('Login successful!')
+                flash('Login successful!', 'success')
                 return redirect(url_for('dashboard'))
             else:
-                flash(f'Name does not match for Employee ID {employee_id}.')
-                return redirect(url_for('login'))
+                flash('Name does not match for the given Employee ID.', 'error')
+                return render_template('login.html')  # Stay on same page
         else:
-            flash('Employee ID not found. Please register first.')
-            return redirect(url_for('register'))
+            flash('Employee ID not found. Please register first.', 'error')
+            return render_template('login.html')
 
     return render_template('login.html')
-
 
 # Register Page
 @app.route('/register', methods=['GET', 'POST'])
@@ -54,24 +51,22 @@ def register():
         if existing_user:
             existing_name = existing_user[1]
             if existing_name.lower() == employee_name.lower():
-                flash('User already registered. Please log in.')
-                return redirect(url_for('login'))
+                flash('User already registered. Please log in.', 'info')
+                return render_template('register.html')
             else:
-                flash(f'Employee ID {employee_id} is already registered with the name {existing_name}.')
-                return redirect(url_for('register'))
+                flash(f'Employee ID {employee_id} is already taken by another user ({existing_name}).', 'error')
+                return render_template('register.html')
 
-        # New user
         query = "INSERT INTO users (employee_id, employee_name) VALUES (%s, %s)"
         cursor.execute(query, (employee_id, employee_name))
         conn.commit()
 
         session['employee_id'] = employee_id
         session['employee_name'] = employee_name
-        flash('Account created!')
+        flash('Account created successfully!', 'success')
         return redirect(url_for('dashboard'))
 
     return render_template('register.html')
-
 
 # Dashboard Page
 @app.route('/dashboard')
@@ -98,5 +93,5 @@ def departure():
 
 
 # Run Server
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
