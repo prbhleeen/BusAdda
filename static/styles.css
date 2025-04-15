@@ -35,6 +35,27 @@ body::after {
     right: -50px;
 }
 
+.flash-messages {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.flash-messages .success {
+    color: green;
+    font-weight: bold;
+}
+
+.flash-messages .error {
+    color: red;
+    font-weight: bold;
+}
+
+.flash-messages .info {
+    color: #007bff;
+    font-weight: bold;
+}
+
 @keyframes float {
     0%, 100% {
         transform: translateY(0);
@@ -106,4 +127,3 @@ button:hover {
     color: #48a6a7;
     text-decoration: underline;
 }
-
