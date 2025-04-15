@@ -78,7 +78,6 @@ Make sure the following are installed on your system:
 3. Click the checkbox to mark the exact time of arrival or departure.
 
 ---
-Last updated- 15 Apr 2025
 
 ### 👩‍💻 Credits
 Special thanks to the contributors:
