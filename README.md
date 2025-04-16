@@ -28,6 +28,8 @@ pip install Flask mysql-connector-python
 4. Run the Flask app
 python3 sql-python.py
 
+---
+
 ## 👥 Contributors
 Shagun Attri
 
