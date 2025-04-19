@@ -36,30 +36,17 @@ Make sure the following are installed on your system:
 #### 1. 🧰 Install XAMPP
 
 - ⁠Download and install XAMPP from the official [XAMPP website](https://www.apachefriends.org/index.html).
-- Launch the XAMPP Control Panel and *start Apache and MySQL*.
 
 #### 2. 📁 Project Folder
 
 - Clone this repository:
-  ```git clone https://github.com/your-username/your-repo-name.git```
-   ⁠
-- ⁠Move the project folder to the ⁠ htdocs ⁠ directory inside your XAMPP installation.  
+  ```git@github.com:Sunaina-04/BusAdda.git```⁠
 
 #### 3. 🗄️ Create MySQL Database and Table
 
 - ⁠Open [phpMyAdmin](http://localhost/phpmyadmin)
-- Create a new database (e.g., ⁠ project_db ⁠)
-- Run the following SQL to create the required table:
-
-```
-  CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    employee_id VARCHAR(50) NOT NULL UNIQUE,
-    name VARCHAR(100) NOT NULL
-  );
-```
-
-- You can also import the provided ⁠ .sql ⁠ file
+- Create a new database named busadda
+- Import the provided ⁠ databses.sql ⁠ file
 
 #### 4. 🚀 Run the Project
 
