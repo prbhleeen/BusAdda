@@ -10,17 +10,9 @@
 </head>
 <body>
     
-    {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-      <ul class="flash-messages">
-        {% for category, message in messages %}
-          {% if message %}
-            <li class="{{ category }}">{{ message }}</li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    {% endif %}
-    {% endwith %}
+  {% extends 'base.html' %}
+
+  {% block content %}
 
     <div class="login-container">
         <form class="login-form" method="POST" action="/register">
@@ -35,5 +27,6 @@
         <p>Already have an account? <a href="/">Login here</a></p>
     </div>
 
+    {% endblock %}
 </body>
 </html>

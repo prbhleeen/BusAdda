@@ -20,23 +20,34 @@ def login():
         employee_id = request.form.get('employee_id')
         employee_name = request.form.get('employee_name')
 
+        # Query database for the employee_id
         cursor.execute("SELECT * FROM users WHERE employee_id = %s", (employee_id,))
         result = cursor.fetchone()
 
+        # Debugging: Print result from database
+        print(f"Database result: {result}")
         if result:
-            if result[1].lower() == employee_name.lower():  # assuming result[1] is name
+            # Strip extra spaces and make comparison case-insensitive
+            db_name = result[2].strip().lower()  # result[2] is employee_name
+            input_name = employee_name.strip().lower()
+
+            # Debugging: Print the names being compared
+            print(f"Input Name: '{input_name}' | Database Name: '{db_name}'")
+
+            if db_name == input_name:
                 session['employee_id'] = employee_id
-                session['employee_name'] = result[1]
+                session['employee_name'] = result[2]  # Use result[2] for the employee_name
                 flash('Login successful!', 'success')
                 return redirect(url_for('dashboard'))
             else:
                 flash('Name does not match for the given Employee ID.', 'error')
-                return render_template('login.html')  # Stay on same page
         else:
             flash('Employee ID not found. Please register first.', 'error')
-            return render_template('login.html')
+
+        return render_template('login.html')  # Stay on same page if login fails
 
     return render_template('login.html')
+
 
 # Register Page
 @app.route('/register', methods=['GET', 'POST'])
@@ -49,12 +60,15 @@ def register():
         existing_user = cursor.fetchone()
 
         if existing_user:
-            existing_name = existing_user[1]
-            if existing_name.lower() == employee_name.lower():
+            # Strip extra spaces and make comparison case-insensitive
+            existing_name = existing_user[2].strip().lower()  # result[2] is employee_name
+            input_name = employee_name.strip().lower()
+
+            if existing_name == input_name:
                 flash('User already registered. Please log in.', 'info')
                 return render_template('register.html')
             else:
-                flash(f'Employee ID {employee_id} is already taken by another user ({existing_name}).', 'error')
+                flash(f'Employee ID {employee_id} is already taken by another user .', 'error')
                 return render_template('register.html')
 
         query = "INSERT INTO users (employee_id, employee_name) VALUES (%s, %s)"
@@ -67,6 +81,7 @@ def register():
         return redirect(url_for('dashboard'))
 
     return render_template('register.html')
+
 
 # Dashboard Page
 @app.route('/dashboard')

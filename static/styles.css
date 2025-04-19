@@ -35,34 +35,40 @@ body::after {
     right: -50px;
 }
 
-.flash-messages {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
+.flash-container {
+    margin: 1rem auto;
+    width: 90%;
+    max-width: 600px;
 }
 
-.flash-messages .success {
-    color: green;
-    font-weight: bold;
+.flash-message {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-.flash-messages .error {
-    color: red;
-    font-weight: bold;
+/* Categories */
+.flash-message.success {
+    background-color: #28a745; /* green */
+}
+.flash-message.error {
+    background-color: #dc3545; /* red */
+}
+.flash-message.info {
+    background-color: #007bff; /* blue */
+}
+.flash-message.warning {
+    background-color: #ffc107; /* yellow */
+    color: #000;
 }
 
-.flash-messages .info {
-    color: #007bff;
-    font-weight: bold;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Login container */
