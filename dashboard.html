@@ -16,23 +16,22 @@
     </div>
 
     <script>
-        const params = new URLSearchParams(window.location.search);
-        const name = params.get("name");
+       
+        const userName = localStorage.getItem('userName');
 
-        if (name) {
-            const decodedName = decodeURIComponent(name);
-            document.getElementById("welcome-message").textContent = `Welcome, ${decodedName}!`;
-
-           
-            document.querySelector(".arrival-btn").addEventListener("click", () => {
-                window.location.href = `arrival.html?name=${encodeURIComponent(decodedName)}`;
-            });
-
-            
-            document.querySelector(".departure-btn").addEventListener("click", () => {
-                window.location.href = `departure.html?name=${encodeURIComponent(decodedName)}`;
-            });
+        if (userName) {
+            document.getElementById("welcome-message").textContent = `Welcome, ${userName}!`;
+        } else {
+            document.getElementById("welcome-message").textContent = "Welcome, Guest!";
         }
+
+        document.querySelector(".arrival-btn").addEventListener("click", () => {
+            window.location.href = `arrival.html?name=${encodeURIComponent(userName)}`;
+        });
+
+        document.querySelector(".departure-btn").addEventListener("click", () => {
+            window.location.href = `departure.html?name=${encodeURIComponent(userName)}`;
+        });
     </script>
 
 </body>
