@@ -55,6 +55,45 @@ body {
     cursor: pointer;
     font-weight: bold;
 }
+
+.guard-info {
+    border: 2px solid #9acbd0;  
+    padding: 8px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    position: absolute; /* or use 'fixed' if you want it to stay visible when scrolling */
+    top: 25px;
+    right: 100px;    
+    background-color: #f2efe7; 
+
+
+}
+
+.guard-info:hover {
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #48a6a7; 
+    border: 2px solid #006a71; 
+
+
+}
+
+.guard-avatar {
+    width: 20px;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+
+
+.guard-name {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+
 .search-container {
     position: relative;
     margin-bottom: 10px;
@@ -137,7 +176,7 @@ input[type='checkbox'] {
     transform: translateY(100%);
 }
 
-@media (max-width: 768px) {
+ /* @media (max-width: 768px) {
     .header {
         flex-direction: column;
         align-items: center;
@@ -154,7 +193,6 @@ input[type='checkbox'] {
 
     .auth-buttons {
         display: flex;
-        flex-direction: row;
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
@@ -165,6 +203,21 @@ input[type='checkbox'] {
         width: auto;
         font-size: 14px;
     }
+
+    .guard-info {
+        padding: 6px;
+        border-radius: 20px;
+    }
+
+    .guard-avatar {
+        width: 16px;
+        margin-right: 3px;
+    }
+
+    .guard-name {
+        font-size: 12px;
+    }
+
 
     .container {
         width: 80%;
@@ -188,7 +241,7 @@ input[type='checkbox'] {
     h1 {
         font-size: 24px;
     }
-}
+} */
 
 @media (max-width: 480px) {
     .header {
@@ -212,4 +265,26 @@ input[type='checkbox'] {
         font-size: 12px;
         padding: 8px;
     }
+
+    .guard-info {
+        display: flex;
+        justify-content: center;
+        padding: 6px;
+        border-radius: 20px;
+        position: absolute; 
+        top: 19px;
+        right: 80px;    
+    
+    }
+
+    .guard-avatar {
+        width: 16px;
+        margin-right: 3px;
+    }
+
+    .guard-name {
+        font-size: 12px;
+    }
+
 }
+
