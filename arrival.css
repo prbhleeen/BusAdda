@@ -286,3 +286,22 @@ input[type='checkbox'] {
 
 }
 
+.select-btn2 {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 2px solid #006a71; 
+    border-radius: 10px;
+    background-color: #48a6a7;  
+    cursor: pointer;
+}
+
+.select-btn2:hover {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 10px;
+    background-color: #f2efe7;
+    font-weight: bold;
+    cursor: pointer;
+}
