@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="pictures/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Page</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="selection-container">
+        <h2 id="welcome-message">Welcome, User!</h2>
+        <button class="select-btn arrival-btn">Arrival</button>
+        <button class="select-btn departure-btn">Departure</button>
+    </div>
+
+    <script>
+       
+        const userName = localStorage.getItem('userName');
+
+        if (userName) {
+            document.getElementById("welcome-message").textContent = `Welcome, ${userName}!`;
+        } else {
+            document.getElementById("welcome-message").textContent = "Welcome, Guest!";
+        }
+
+        document.querySelector(".arrival-btn").addEventListener("click", () => {
+            window.location.href = `arrival.html?name=${encodeURIComponent(userName)}`;
+        });
+
+        document.querySelector(".departure-btn").addEventListener("click", () => {
+            window.location.href = `departure.html?name=${encodeURIComponent(userName)}`;
+        });
+    </script>
+
+</body>
+</html>
