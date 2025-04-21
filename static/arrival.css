@@ -62,7 +62,7 @@ body {
     border-radius: 30px;
     display: flex;
     align-items: center;
-    position: absolute; /* or use 'fixed' if you want it to stay visible when scrolling */
+    position: absolute; 
     top: 25px;
     right: 100px;    
     background-color: #f2efe7; 

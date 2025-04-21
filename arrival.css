@@ -56,13 +56,13 @@ body {
     font-weight: bold;
 }
 
-.guard-info {
+#guard-info {
     border: 2px solid #9acbd0;  
     padding: 8px;
     border-radius: 30px;
     display: flex;
     align-items: center;
-    position: absolute; /* or use 'fixed' if you want it to stay visible when scrolling */
+    position: absolute; 
     top: 25px;
     right: 100px;    
     background-color: #f2efe7; 
@@ -70,7 +70,7 @@ body {
 
 }
 
-.guard-info:hover {
+#guard-info:hover {
     font-weight: bold;
     cursor: pointer;
     background-color: #48a6a7; 
@@ -85,8 +85,6 @@ body {
     border-radius: 50%;
     margin-right: 5px;
 }
-
-
 
 .guard-name {
     font-size: 14px;

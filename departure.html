@@ -1,38 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<<< HEAD:templates/departure.html
-    <link rel="icon" type="image/png" href="/static/logo.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bus Departure Page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='arrival.css') }}">
-    <link rel="icon" type="image/png" href="/static/logo.png">
-========
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bus Departure Page</title>
     <link rel="stylesheet" href="arrival.css">
     <link rel="icon" type="image/png" href="assets/logo.png">
->>>>>>>> frontend:departure.html
 
 </head>
 <body>
     <div class="header">
         <div class="logo-title">
-<<<<<<<< HEAD:templates/departure.html
-            <img src="/static/logo.png" alt="Logo">
-========
             <img src="assets/logo.png" alt="Logo">
->>>>>>>> frontend:departure.html
             <h1>Bus Adda</h1>
         </div>
         <h1 >Departure</h1>
         <div class="auth-buttons">
-            <div class="guard-info">
-                <img src="{{ url_for('static', filename='guard.png') }}" alt="Guard Avatar" class="guard-avatar">
-                <span class="guard-name">{{ session['employee_name'] }}</span> 
-            </div>        
+            <div id="guard-info">
+                <img src="static/guard.png" alt="Guard Avatar" class="guard-avatar">
+            </div>
 
             <button class="select-btn" onclick="window.location.href='/dashboard'">Home</button>
         </div>
@@ -56,6 +42,7 @@
             </tbody>
         </table>
     </div>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="script.js"></script>
+
 </body>
 </html>

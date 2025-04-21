@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="pictures/logo.png">
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selection Page</title>
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
+    <div id="guard-info">
+        <img src="static/guard.png" alt="Guard Avatar" class="guard-avatar">
+    </div>
 
     <div class="selection-container">
         <h2 id="welcome-message">Welcome, User!</h2>
@@ -16,15 +19,14 @@
     </div>
 
     <script>
-       
-        const userName = localStorage.getItem('userName');
+        const userName = localStorage.getItem("userName") || "Guest";
+        document.getElementById("welcome-message").textContent = `Welcome, ${userName}!`;
 
-        if (userName) {
-            document.getElementById("welcome-message").textContent = `Welcome, ${userName}!`;
-        } else {
-            document.getElementById("welcome-message").textContent = "Welcome, Guest!";
-        }
+        const span = document.createElement("span");
+        span.className = "guard-name";
+        span.textContent = userName;
 
+        document.getElementById("guard-info").appendChild(span);
         document.querySelector(".arrival-btn").addEventListener("click", () => {
             window.location.href = `arrival.html?name=${encodeURIComponent(userName)}`;
         });
@@ -33,6 +35,5 @@
             window.location.href = `departure.html?name=${encodeURIComponent(userName)}`;
         });
     </script>
-
 </body>
 </html>

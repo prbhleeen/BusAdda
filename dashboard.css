@@ -59,6 +59,41 @@ button:focus {
     box-shadow: 0px 0px 15px rgba(52, 152, 219, 0.7);
 }
 
+#guard-info {
+    border: 2px solid #9acbd0;  
+    padding: 8px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    position: absolute; 
+    top: 25px;
+    right: 100px;    
+    background-color: #f2efe7; 
+
+
+}
+
+#guard-info:hover {
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #48a6a7; 
+    border: 2px solid #006a71; 
+
+
+}
+
+.guard-avatar {
+    width: 20px;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.guard-name {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
 /* Responsive Design */
 @media (max-width: 400px) {
     .selection-container {
