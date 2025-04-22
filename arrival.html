@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bus Arrival Page</title>
     <link rel="stylesheet" href="arrival.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 </head>
 <body>
     <div class="header">
@@ -39,8 +41,10 @@
                 <!-- Bus data will go here dynamically -->
             </tbody>
         </table>
-    </div>
+        <button id="downloadBtn" class="select-btn2">Export as PDF</button>
 
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
