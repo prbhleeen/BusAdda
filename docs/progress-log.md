@@ -14,6 +14,12 @@
 - Overall Frontend development
 - Assigned work for backend
 
-## Week 6-7 (07-20 March, 2025)
+## Week 6-7 (07-20 April, 2025)
 - local database and sql table created
 - backend for login and sign up page added using python and flask
+- functionality to vview logged-in user and profile added
+
+## Week 8 (21 - 28 April, 2025)
+- contact us page added
+- terms and conditions + privacy policy added
+- export as pdf functionality added
