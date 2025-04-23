@@ -11,59 +11,77 @@ document.addEventListener('DOMContentLoaded', function () {
     const submissionMessage = document.getElementById('submissionMessage');
 
     form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Always prevent default
+
         let isValid = true;
 
-        // Validate Name
+        // Reset errors
+        nameError.textContent = '';
+        employeeIdError.textContent = '';
+        emailError.textContent = '';
+        messageError.textContent = '';
+        submissionMessage.textContent = '';
+
+        // Validate fields
         if (nameInput.value.trim() === '') {
             nameError.textContent = 'Please enter your name.';
             isValid = false;
-        } else {
-            nameError.textContent = '';
         }
 
-        // Validate Employee ID
         if (employeeIdInput.value.trim() === '') {
             employeeIdError.textContent = 'Please enter your Employee ID.';
             isValid = false;
         } else if (!/^[0-9]+$/.test(employeeIdInput.value)) {
             employeeIdError.textContent = 'Please enter a valid Employee ID (e.g., 12345).';
             isValid = false;
-        } else {
-            employeeIdError.textContent = '';
         }
 
-        // Validate Email
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailRegex.test(emailInput.value)) {
             emailError.textContent = 'Please enter a valid email address.';
             isValid = false;
-        } else {
-            emailError.textContent = '';
         }
 
-        // Validate Message
         if (messageInput.value.trim() === '') {
             messageError.textContent = 'Please enter your message.';
             isValid = false;
-        } else {
-            messageError.textContent = '';
         }
 
-        if (isValid) {
-            // Allow the form to submit, Web3Forms should handle the redirect now
-            submissionMessage.textContent = 'Your message has been sent. Redirecting...';
-            submissionMessage.className = 'submission-message success';
-
-            // Optionally reset the form before the redirect
-            form.reset();
-        } else {
-            event.preventDefault(); // Stop form submission if validation fails
+        if (!isValid) {
             submissionMessage.textContent = 'Please correct the errors in the form.';
             submissionMessage.className = 'submission-message error';
-            setTimeout(() => {
-                submissionMessage.textContent = '';
-                submissionMessage.className = 'submission-message';
-            }, 3000);
+            return;
         }
+
+        // Send form data to Web3Forms
+        const formData = new FormData(form);
+        formData.append('access_key', '35ce68cd-9b96-4256-8769-d0f67156453f');
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                submissionMessage.textContent = 'Form submitted successfully!';
+                submissionMessage.className = 'submission-message success';
+
+                form.reset(); // ✅ Reset the form
+
+                // Optional: Redirect after 2 seconds
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html';
+                }, 2000);
+            } else {
+                submissionMessage.textContent = 'Form submission failed. Please try again.';
+                submissionMessage.className = 'submission-message error';
+            }
+        })
+        .catch(error => {
+            console.error('Submission error:', error);
+            submissionMessage.textContent = 'Error submitting the form. Try again later.';
+            submissionMessage.className = 'submission-message error';
+        });
     });
 });
