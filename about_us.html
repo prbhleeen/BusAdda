@@ -1,164 +1,87 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Bus Adda 🚏🚌</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            color: #333;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            color: #007bff;
-        }
-        p {
-            margin-bottom: 1em;
-        }
-        .section {
-            margin-bottom: 2em;
-            padding-bottom: 1.5em;
-            border-bottom: 1px solid #eee;
-        }
-        .section:last-child {
-            border-bottom: none;
-        }
-        .contributor-profile {
-            text-align: center;
-            margin-bottom: 20px; /* Space between each contributor */
-        }
-        .contributor-profile img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-top: 0.5em; /* Space between name and image */
-        }
-        .section-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1em;
-        }
-        .section-header h1, .section-header h2 {
-            margin-right: 10px;
-            font-size: 1.8em;
-        }
-        .section-header .images {
-            width: 30px;
-            height: 30px;
-            border: 1px solid #ccc;
-            background-color: #eee;
-            border-radius: 5px;
-        }
-        .top-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #3cb4a6;
-            color: white;
-            padding: 8px 15px;
-            width: 100%;
-            margin-left: 0;
-            margin-right: 0;
-        }
-        .top-header img {
-            width: auto;
-            max-height: 30px;
-        }
-        .top-header h1 {
-            margin: 0 15px;
-            text-align: center;
-            font-size: 1.2em;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            flex-grow: 1;
-        }
-        .top-header button {
-            background-color: transparent;
-            color: white;
-            border: 1px solid white;
-            padding: 6px 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9em;
-            white-space: nowrap;
-        }
-        .top-header a {
-            color: white;
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="about_us.css">
 </head>
 <body>
     <div class="top-header">
-        <img src="https://github.com/Sunaina-04/BusAdda/blob/main/assets/logo.jpg" alt="Bus Adda Logo">
-        <h1>Bus Adda - About Us</h1>
-        <button><a href="https://sunaina-04.github.io/BusAdda/">Visit our site!</a></button>
+        <div class="header-content">
+            <img src="assets/logo.jpg" alt="Bus Adda Logo" class="logo">
+            <h1 class="site-title">Bus Adda - About Us</h1>
+            <a href="https://sunaina-04.github.io/BusAdda/" class="visit-site-btn">Visit our site!</a>
+        </div>
     </div>
-    <div class="container">
-        <section class="section">
-            <div class="section-header">
-                <h1>About Us</h1>
-                <div class="images"><img src="https://github.com/Sunaina-04/BusAdda/blob/main/assets/logo.jpg"></div>
-            </div>
-            <p>At <strong>Bus Adda</strong>, we're driven by a passion to simplify the essential tasks of security personnel. With a single click 🖱️, our platform delivers effortless registration and real-time tracking of bus arrivals and departures. We're dedicated to creating tangible improvements and positively impacting the daily lives of those who keep our communities moving, extending this commitment to every user we serve.</p>
-        </section>
 
-        <section class="section">
-            <div class="section-header">
-                <h2>Our Mission</h2>
-            </div>
-            <p>Our mission is to <strong>empower security personnel at bus terminals with a simple, one-click solution for real-time tracking of bus arrivals and departures</strong>. We strive to <strong>streamline the registration process, eliminating cumbersome manual methods and providing instant access to accurate information</strong> and aim to make a positive impact by <strong>enhancing the efficiency, transparency, and security of bus transportation for everyone involved</strong>.</p>
-        </section>
-
-        <section class="section">
-            <h2>Our Contributors</h2>
-            <div style="display: flex; flex-direction: column; align-items: center;">
-                <div class="contributor-profile">
-                    <a href="blank_page_1.html" target="_blank">
-                        <p>Contributor Name 1</p>
-                        <img src="https://via.placeholder.com/100" alt="Placeholder Image">
-                    </a>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+        <div class="container" style="padding: 20px; max-width: 1200px; margin: auto;">
+            <section class="section" style="margin-bottom: 40px;">
+                <div class="section-header" style="text-align: center; margin-bottom: 20px;">
+                    <h1 style="font-size: 3em; color: #004080; width: 100%;">About Us</h1>
+                    <div class="images">
+                        <img src="assets/logo.jpg" style="width: 150px; border-radius: 10px;">
+                    </div>
                 </div>
-                <div class="contributor-profile">
-                    <a href="blank_page_2.html" target="_blank">
-                        <p>Contributor Name 2</p>
-                        <img src="https://via.placeholder.com/100" alt="Placeholder Image">
-                    </a>
+                <p style="font-size: 1.5em; line-height: 2; text-align: justify; width: 100%;">
+                    At <strong>Bus Adda</strong>, we're driven by a passion to simplify the essential tasks of security personnel. With a single click 🖱️, our platform delivers effortless registration and real-time tracking of bus arrivals and departures. We're dedicated to creating tangible improvements and positively impacting the daily lives of those who keep our communities moving, extending this commitment to every user we serve.
+                </p>
+            </section>
+    
+            <section class="section" style="margin-bottom: 40px;">
+                <div class="section-header" style="text-align: center; margin-bottom: 20px;">
+                    <h2 style="font-size: 2.5em; color: #004080; width: 100%;">Our Mission</h2>
                 </div>
-                <div class="contributor-profile">
-                    <a href="blank_page_3.html" target="_blank">
-                        <p>Contributor Name 3</p>
-                        <img src="https://via.placeholder.com/100" alt="Placeholder Image">
-                    </a>
+                <p style="font-size: 1.5em; line-height: 2; text-align: justify; width: 100%;">
+                    Our mission is to <strong>empower security personnel at bus terminals with a simple, one-click solution for real-time tracking of bus arrivals and departures</strong>. We strive to <strong>streamline the registration process, eliminating cumbersome manual methods and providing instant access to accurate information</strong> and aim to make a positive impact by <strong>enhancing the efficiency, transparency, and security of bus transportation for everyone involved</strong>.
+                </p>
+            </section>
+    
+            <section class="section">
+                <h2 style="text-align: center; font-size: 2.5em; color: #004080; margin-bottom: 20px; width: 100%;">Our Contributors</h2>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                    <div class="contributor-profile" style="text-align: center; width: 150px;">
+                        <a href="blank_page_1.html" target="_blank" style="text-decoration: none; color: #333;">
+                            <img src="https://via.placeholder.com/100" alt="Placeholder Image" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 10px;">
+                            <p style="font-weight: bold; font-size: 1.2em;">Contributor Name 1</p>
+                        </a>
+                    </div>
+                    <div class="contributor-profile" style="text-align: center; width: 150px;">
+                        <a href="blank_page_2.html" target="_blank" style="text-decoration: none; color: #333;">
+                            <img src="https://via.placeholder.com/100" alt="Placeholder Image" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 10px;">
+                            <p style="font-weight: bold; font-size: 1.2em;">Contributor Name 2</p>
+                        </a>
+                    </div>
+                    <div class="contributor-profile" style="text-align: center; width: 150px;">
+                        <a href="blank_page_3.html" target="_blank" style="text-decoration: none; color: #333;">
+                            <img src="https://via.placeholder.com/100" alt="Placeholder Image" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 10px;">
+                            <p style="font-weight: bold; font-size: 1.2em;">Contributor Name 3</p>
+                        </a>
+                    </div>
+                    <div class="contributor-profile" style="text-align: center; width: 150px;">
+                        <a href="blank_page_4.html" target="_blank" style="text-decoration: none; color: #333;">
+                            <img src="https://via.placeholder.com/100" alt="Placeholder Image" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 10px;">
+                            <p style="font-weight: bold; font-size: 1.2em;">Contributor Name 4</p>
+                        </a>
+                    </div>
+                    <div class="contributor-profile" style="text-align: center; width: 150px;">
+                        <a href="blank_page_5.html" target="_blank" style="text-decoration: none; color: #333;">
+                            <img src="https://via.placeholder.com/100" alt="Placeholder Image" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 10px;">
+                            <p style="font-weight: bold; font-size: 1.2em;">Contributor Name 5</p>
+                        </a>
+                    </div>
                 </div>
-                <div class="contributor-profile">
-                    <a href="blank_page_4.html" target="_blank">
-                        <p>Contributor Name 4</p>
-                        <img src="https://via.placeholder.com/100" alt="Placeholder Image">
-                    </a>
-                </div>
-                <div class="contributor-profile">
-                    <a href="blank_page_5.html" target="_blank">
-                        <p>Contributor Name 5</p>
-                        <img src="https://via.placeholder.com/100" alt="Placeholder Image">
-                    </a>
-                </div>
-            </div>
-        </section>
-    </div>
-</body>
+            </section>
+        </div>
+    </body>
 </html>
