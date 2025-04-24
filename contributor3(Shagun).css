@@ -1,0 +1,77 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background: linear-gradient(to top, #f2efe7, #9acbd0); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.author-profile {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+}
+.author-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+}
+.author-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.author-info h2 {
+    margin-top: 0;
+    color: #333;
+}
+.author-info p {
+    color: #555;
+    margin-bottom: 10px;
+}
+.author-links a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.author-links a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 600px) {
+    .author-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+    .author-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+.moving-gif {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    animation: moveGifStraight 10s infinite;
+    top: 0;
+    left: 10%;
+}
+@keyframes moveGifStraight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(80vw - 100px));
+    }
+}
