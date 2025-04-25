@@ -1,0 +1,22 @@
+<!-- Employee Profile Modal -->
+<div id="employee-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div class="employee-profile" id="profile-display">
+            <img src="static/guard.png" alt="Employee Avatar" class="employee-avatar" id="avatar-image">
+            <a href="#" class="edit-profile-link" id="edit-profile-link">Edit Profile</a>
+            <h2 id="employee-name">Employee Name</h2>
+            <p id="employee-id">Employee ID: 12345</p>
+        </div>
+            <form id="edit-profile-form" style="display:none; text-align:left;">
+                <label>Choose Avatar:</label><br>
+                <div id="avatar-options" style="display:flex; gap:10px; margin-bottom: 15px;">
+                    <!-- Avatar options will be dynamically inserted here -->
+                </div>
+                <label for="name-input">Change Name:</label><br>
+                <input type="text" id="name-input" placeholder="Enter new name"><br><br>
+                <button type="button" id="save-profile-btn">Save</button>
+                <button type="button" id="cancel-profile-btn">Cancel</button>
+            </form>
+    </div>
+</div>

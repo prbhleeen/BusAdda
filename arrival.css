@@ -28,6 +28,34 @@ body {
     gap: 10px;
 }
 
+/* Back Button */
+.back-button {
+    background-color: #48A6A7; /* Teal background */
+    color: #F2EFE7; /* Light beige text */
+    border: none;
+    padding: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0 20px 0;
+    display: block;
+    text-align: left;
+    width: auto;
+    height: auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    top: auto;
+    left: 5px;
+    margin-left: 0;
+    z-index: auto;
+}
+
+.back-button:hover {
+    background-color: #9ACBD0; /* Light teal on hover */
+    color: #006A71; /* Dark teal text on hover */
+}
+
 .logo-title {
     display: flex;
     align-items: center;
