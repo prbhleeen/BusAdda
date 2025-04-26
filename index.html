@@ -1,50 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Adda | Home</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="assets/logo.png">
+
 </head>
 <body>
 
-    <div class="login-container">
-        <form class="login-form" id="login-form">
-            <img src="assets/logo.png" alt="Bus Adda Logo" class="logo">  
-            <h2>Welcome back to Bus Adda!</h2>
-
-            <input type="text" id="employee_id" name="employee_id" placeholder="EMPLOYEE ID"  
-                   pattern="[0-9]+" title="Only numbers are allowed" required>
-
-            <input type="text" id="employee_name" name="employee_name" placeholder="EMPLOYEE NAME"  
-                   pattern="[A-Za-z\s]+" title="Only alphabets and spaces are allowed" required>
-
-            <button type="submit">Login</button>
-        </form>
-        <p>Don't have an account? <a href="register.html">Sign up</a></p>
+    <div class="header">
+        <div class="logo-title">
+            <img src="assets/logo.png" alt="Logo">
+            <h1>Bus Adda</h1>
+        </div>
+         <div class="auth-buttons">
+            <button type="button" onclick="location.href='about.html'"> About Us </button>
+            <button type="button" onclick="location.href='login.html'"> Login </button>
+            <button type="button" onclick="location.href='register.html'"> Sign Up </button>
+        </div> 
     </div>
+    <section class="hero-section">
+        <div class="hero-content">
+            <img src="assets/bus2.avif" alt="Bus Image" class="hero-image">
+            <div class="hero-overlay">
+                <h2>Are you ready for a smoother ride?</h2>
+                <div class="button-container">
+                    <button class="dashboard-btn student-btn" onclick="location.href='student_dash.html'">Student Dashboard</button>
+                    <button class="dashboard-btn guard-btn" onclick="location.href='dashboard.html'">Guard Dashboard</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="about-section">
+            <img src="assets/team.png"> 
+    <div class="about-us">
+        <h2> About Us </h2>
+        <p> Bus Adda is a smart web-based platform crafted to support college bus guards in effortlessly managing bus arrivals and departures and help students have a smoother commute experience. Our goal is to simplify tracking, improve coordination, and condition of campus buses.
+            <a class="read-more" href="about.html"> Read More </a>
+        </p>
+    </div>
+</div>
+    </section>
+    <section class="service-section">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <h3>Timing Monitor</h3>
+                <img src="assets/timing.jpg" alt="Timing Monitor Icon" class="service-icon">
+                <p>For guards, to keep a record of arrival and departure times of buses.</p>
+            </div>
+            <div class="service-card">
+                <h3>Bus Feedback</h3>
+                <img src="assets/feedback.jpg" alt="Bus Feedback Icon" class="service-icon">
+                <p>Share your experience and help us improve bus services with your feedback.</p>
+            </div>
+            <div class="service-card">
+                <h3>Lost & Found</h3>
+                <img src="assets/lost.jpg" alt="Lost and Found Icon" class="service-icon">
+                <p>Easily report or claim items lost during your bus journey.</p>
+            </div>
+        </div>
+    </section>
+        
 
-    <script>
-        localStorage.removeItem('userName');
 
-        document.getElementById("login-form").addEventListener("submit", function(event) {
-            event.preventDefault(); 
+    
 
-            if (this.checkValidity()) {
-                const name = document.getElementById("employee_name").value;
-                
-                // Ensure we're storing the new name
-                localStorage.setItem('userName', name);
-
-                // Check if localStorage is storing the new name
-                console.log('Stored name:', localStorage.getItem('userName')); // Debugging line
-
-                // Redirect to the dashboard
-                window.location.href = "dashboard.html";
-            } else {
-                this.reportValidity();
-            }
-        });
-    </script>
-
+    <footer class="footer">
+        <p>
+            By using this site, you agree to our 
+            <a href="terms.html">Terms and Conditions</a> and 
+            <a href="privacy.html">Privacy Policy</a>.
+        </p>
+        <div class="copyright">&copy; 2025 BusAdda. All rights reserved.</div>
+    </footer>
+  
 </body>
 </html>

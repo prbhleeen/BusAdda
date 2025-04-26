@@ -1,5 +1,6 @@
 let initialRows = [];
 
+// Initialize bus data on page load
 function updateBusTimes() {
     let buses = [];
     
@@ -22,6 +23,7 @@ function updateBusTimes() {
     });
 }
 
+// Update arrival time when checkbox is checked or unchecked
 function updateArrivalTime(checkbox) {
     const parentRow = checkbox.closest('tr');
     const tableBody = parentRow.parentNode;
@@ -53,6 +55,7 @@ function updateArrivalTime(checkbox) {
     }
 }
 
+// Function to filter bus rows based on the search input
 function filterRows() {
     const searchValue = document.getElementById('searchBar').value.toLowerCase();
     const rows = document.querySelectorAll('#busTable tr');
@@ -67,5 +70,69 @@ function filterRows() {
     });
 }
 
-// Initialize table on load
+// Function to collect selected buses and their data
+function collectSelectedBuses() {
+    const selectedBuses = [];
+    const rows = document.querySelectorAll('#busTable tr');
+    
+    rows.forEach(row => {
+        const checkbox = row.querySelector('input[type="checkbox"]');
+        if (checkbox && checkbox.checked) {
+            const routeNumber = row.querySelector('td:nth-child(2)').textContent;
+            const arrivalTime = row.querySelector('td:nth-child(3)').textContent;
+            selectedBuses.push({ routeNumber, arrivalTime });
+        }
+    });
+    
+    return selectedBuses;
+}
+
+// Function to generate the PDF
+function generatePDF() {
+    const selectedBuses = collectSelectedBuses();
+
+    if (selectedBuses.length === 0) {
+        alert("No buses selected.");
+        return;
+    }
+
+    let pdfContent = "<h1>Bus Arrivals</h1> <table><tr><th>Route Number</th> <th>Arrival Time</th> </tr>";
+
+    selectedBuses.forEach(bus => {
+        // Ensure arrival time is not empty
+        if (bus.arrivalTime) {
+            pdfContent += `<tr><td>${bus.routeNumber}</td><td>${bus.arrivalTime}</td></tr>`;
+        }
+    });
+
+    pdfContent += "</table>";
+
+    // Convert the generated HTML to PDF
+    const pdfContentDiv = document.createElement("div");
+    pdfContentDiv.innerHTML = pdfContent;
+
+    // Use html2pdf.js to generate the PDF
+    html2pdf()
+        .from(pdfContentDiv)
+        .save('bus_log.pdf');
+}
+
+// Ensure the table is populated on page load
 document.addEventListener("DOMContentLoaded", updateBusTimes);
+
+// Ensure guard name is set from localStorage
+window.addEventListener("DOMContentLoaded", function () {
+    const userName = localStorage.getItem("userName") || "Guest";
+
+    const span = document.createElement("span");
+    span.className = "guard-name";
+    span.textContent = userName;
+
+    const guardInfo = document.getElementById("guard-info");
+    if (guardInfo) {
+        guardInfo.appendChild(span);
+    }
+});
+
+// Add event listener for the PDF button
+document.getElementById("downloadBtn").addEventListener("click", generatePDF);

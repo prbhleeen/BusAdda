@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Arrival Page</title>
+    <link rel="stylesheet" href="arrival.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</head>
+<body>
+   
+    <div class="header">
+        <div class="logo-title">
+            <img src="assets/logo.png" alt="Logo">
+            <h1>Bus Adda</h1>
+        </div>
+        <h1 >Arrival</h1>
+         <div class="auth-buttons">
+            <div id="guard-info">
+                <img src="static/guard.png" alt="Guard Avatar" class="guard-avatar">
+            </div>
+            <button class="select-btn" onclick="window.location.href='dashboard.html'">Home</button>
+        </div> 
+    </div>
+    <button class="back-button" onclick="history.back()">&#8592;</button>
+    
+    <div class="container">
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search by Route Number" oninput="filterRows()">
+            <span class="search-icon">&#128269;</span>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Route Number</th>
+                    <th>Arrival Time</th>
+                </tr>
+            </thead>
+            <tbody id="busTable">
+            </tbody>
+        </table>
+        <button id="downloadBtn" class="select-btn2">Export as PDF</button>
+
+    </div>
+    <a href="contact.html" class="chatbot-btn" title="Contact Us">Contact Us 💬</a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,38 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="pictures/logo.png">
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selection Page</title>
+    <title>Bus Adda | Guard Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="profile-modal.css">
 </head>
 <body>
+    <video autoplay muted loop class="background-video">
+        <source src="assets/bus.mp4" type="video/mp4">
+    </video>
+    
+    <!-- <button class="back-button" onclick="history.back()">&#8592;</button> -->
+
+    <div id="guard-info">
+        <img src="static/guard.png" alt="Guard Avatar" class="guard-avatar">
+    </div>
 
     <div class="selection-container">
         <h2 id="welcome-message">Welcome, User!</h2>
         <button class="select-btn arrival-btn">Arrival</button>
         <button class="select-btn departure-btn">Departure</button>
     </div>
+    
+    <!-- Employee Profile Modal -->
+    <!-- Replaced with profile-modal.html content -->
+    <div id="employee-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="employee-profile" id="profile-display">
+                <img padding src="static/guard.png" alt="Employee Avatar" class="employee-avatar" id="avatar-image">
+                <div class="avatar-overlay" style="display: flex; align-items: center; gap: 6px;">
+                    <img src="static/photography.png" alt="Camera Icon" class="camera-icon" style="margin-left:8px;">
+                    <a href="#" class="edit-profile-link" id="edit-profile-link" style="margin: 0;">Edit Profile</a>
+                </div>
+                <h2 id="employee-name">Employee Name</h2>
+                <p id="employee-id">Employee ID: 12345</p>
+            </div>
+            <form id="edit-profile-form" style="display:none; text-align:left;">
+                <label for="avatar-input">Change Avatar:</label><br>
+                <input type="file" id="avatar-input" accept="image/*"><br><br>
+                <label for="name-input">Change Name:</label><br>
+                <input type="text" id="name-input" placeholder="Enter new name"><br><br>
+                <button type="button" id="save-profile-btn">Save</button>
+                <button type="button" id="cancel-profile-btn">Cancel</button>
+            </form>
+        </div>
+    </div>
 
-    <script>
-       
-        const userName = localStorage.getItem('userName');
+    <!-- Footer with Terms and Conditions -->
+    <footer class="footer">
+        <p>
+            By using this site, you agree to our 
+            <a href="terms.html">Terms and Conditions</a> and 
+            <a href="privacy.html">Privacy Policy</a>.
+        </p>
+        <div class="copyright">&copy; 2025 BusAdda. All rights reserved.</div>
+    </footer>
 
-        if (userName) {
-            document.getElementById("welcome-message").textContent = `Welcome, ${userName}!`;
-        } else {
-            document.getElementById("welcome-message").textContent = "Welcome, Guest!";
-        }
-
-        document.querySelector(".arrival-btn").addEventListener("click", () => {
-            window.location.href = `arrival.html?name=${encodeURIComponent(userName)}`;
-        });
-
-        document.querySelector(".departure-btn").addEventListener("click", () => {
-            window.location.href = `departure.html?name=${encodeURIComponent(userName)}`;
-        });
-    </script>
+    <script src="profile-edit.js"></script>
 
 </body>
 </html>
+
+
+      

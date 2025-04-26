@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="/static/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Bus Adda | Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+
+    <div class="selection-container">
+        <h2 id="welcome-message">Welcome, {{ name }}!</h2>
+        <button class="select-btn" onclick="window.location.href='/arrival'">Arrival</button>
+        <button class="select-btn" onclick="window.location.href='/departure'">Departure</button>
+            </div>
+
+    <!-- <script>
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get("name");
+
+        if (name) {
+            document.getElementById("welcome-message").textContent = `Welcome, ${decodeURIComponent(name)}!`;
+        }
+    </script> -->
+
+
+</body>
+</html>
