@@ -191,3 +191,25 @@ footer {
     font-size: 0.8em; /* Adjusted font size */
     box-sizing: border-box; /* Include padding in width */
 }
+
+@keyframes backgroundWipe { 
+    0% {
+      background-position: 100% 0; /* Start highlight off-screen right */
+    }
+    100% {
+      background-position: -100% 0; /* Move highlight off-screen left */
+    }
+  }
+.highlightable {
+  /* Static styles */
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  background: linear-gradient(to right, 
+      transparent 45%,     /* Start transparent */
+      lightyellow 50%,     /* Transition to light yellow */
+      yellow 50%,            /* Transition to a darker yellow (gold) */
+      gold 100%            /* Stay darker yellow */
+  ); 
+  background-size: 200% 100%; /* Gradient is twice the width */
+  animation: backgroundWipe 4s linear infinite; /* Use the existing keyframe name */
+}  

@@ -1,15 +1,94 @@
 body {
     font-family: sans-serif;
     line-height: 1.6;
-    margin: 20px;
+    margin: 0; 
     background: linear-gradient(to top, #f2efe7, #9acbd0); 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Important: Prevents horizontal scrollbar */
+    position: relative; 
+    padding-top: 1px; 
 }
 
+.top-header {
+    background-color: #006a71; 
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%; 
+    padding: 0 40px 0 20px; 
+    box-sizing: border-box; 
+}
+
+.logo {
+    width: 100%; 
+    max-width: 120px; 
+    height: auto; 
+    border-radius: 50%; 
+}
+
+.site-title {
+    font-size: 2.5vw; 
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+    flex: 1; 
+}
+
+.visit-site-btn {
+    background-color: #48a6a7; 
+    color: #f2efe7; 
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.2vw; 
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #006a71; 
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #f2efe7; 
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #48a6a7; 
+    color: #f2efe7; 
+}
 .author-profile {
     background-color: #fff;
     padding: 30px;
@@ -22,11 +101,11 @@ body {
     position: relative;
 }
 .author-image {
-    width: 120px;
-    height: 120px;
+    margin-bottom: 10px;
     border-radius: 50%;
     overflow: hidden;
     margin-right: 20px;
+    flex-shrink: 0;
 }
 .author-image img {
     width: 100%;
@@ -59,13 +138,20 @@ body {
         margin-bottom: 20px;
     }
 }
+.moving-gif-container{
+    display:flex;
+    align-items:center;
+    padding:10px 10px;
+}
 .moving-gif {
-    position: absolute;
-    width: 100px;
+    width: 200px;
     height: auto;
     animation: moveGifStraight 10s infinite;
-    top: 0;
-    left: 10%;
+    left: 20%;
+    right: 10%;
+    border-radius: 8px;
+    padding:10px 10px;
+
 }
 @keyframes moveGifStraight {
     0% {
@@ -75,3 +161,79 @@ body {
         transform: translateX(calc(80vw - 100px));
     }
 }
+
+/* --- ADD THIS KEYFRAME RULE --- */
+@keyframes wipeHighlightPastel {
+    0% {
+      background-position: 100% 0; /* Start highlight off-screen right */
+    }
+    100% {
+      background-position: -100% 0; /* Move highlight off-screen left */
+    }
+  }
+  
+  .highlight-text {
+    /* Static styles for appearance */
+    padding: 0.1em 0.3em; /* Adds a little space around the text */
+    border-radius: 3px;   /* Optional: slightly rounded corners */
+
+    background: linear-gradient(to right, transparent 50%, #FFFACD 50%); /* Example: Pastel Yellow (LemonChiffon) */
+
+    background-size: 200% 100%; /* Makes the gradient twice as wide as the element */
+    
+    /* Apply the animation */
+    animation: wipeHighlightPastel 2.5s linear infinite; /* Adjust duration (speed) as needed */
+  }
+  /* --- Keep existing @keyframes wipeHighlightPastel --- */
+@keyframes wipeHighlightPastel {
+    0% {
+      background-position: 100% 0; /* Start highlight off-screen right */
+    }
+    100% {
+      background-position: -100% 0; /* Move highlight off-screen left */
+    }
+  }
+
+  @keyframes blinkStars {
+    0%, 100% { 
+      opacity: 1; /* Fully visible */
+    }
+    50% { 
+      opacity: 0.3; /* Partially faded (adjust 0.3 for blink intensity) */
+    }
+  }
+
+  .highlight-text {
+    /* Keep existing styles */
+    padding: 0.1em 0.3em; 
+    border-radius: 3px;   
+    background: linear-gradient(to right, transparent 50%, #FFFACD 50%); 
+    background-size: 200% 100%; 
+    animation: wipeHighlightPastel 2.5s linear infinite; 
+
+    position: relative; /* Needed to position pseudo-elements */
+    overflow: visible;  /* Allow stars to appear slightly outside the box */
+  }
+
+  .highlight-text::before,
+  .highlight-text::after {
+    content: '✨'; /* You can use other characters like '*', '★' */
+    position: absolute;
+    font-size: 0.8em; /* Adjust size of the star */
+    color: gold;      /* Adjust color of the star */
+    z-index: 2;       /* Ensure stars are visually above the background wipe */
+
+    animation: blinkStars 1.5s infinite; /* Adjust duration for blink speed */
+  }
+
+  .highlight-text::before {
+    top: -0.4em;  /* Adjust vertical position */
+    left: -0.5em; /* Adjust horizontal position */
+  }
+
+  .highlight-text::after {
+    bottom: -0.4em; /* Adjust vertical position */
+    right: -0.5em;  /* Adjust horizontal position */
+    animation-delay: 0.75s; /* Offset the blink timing from the first star */
+  }
+  
