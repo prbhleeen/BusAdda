@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign Up Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
     <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
+    <button class="back-button" onclick="history.back()">&#8592;</button>
     <div class="login-container">
         <form class="login-form" id="register-form">
             <img src="assets/logo.png" alt="Bus Adda Logo" class="logo">  
@@ -17,27 +18,9 @@
                    pattern="[A-Za-z\s]+" title="Only alphabets and spaces are allowed" required>
             <button type="submit">Sign Up</button>
         </form>
-        <p>Already have an account? <a href="index.html">Login here</a></p>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
     </div>
 
-    <script>
-        document.getElementById("register-form").addEventListener("submit", function(event) {
-            event.preventDefault(); 
-
-            if (this.checkValidity()) {
-                const name = document.getElementById("employee_name").value;
-                localStorage.removeItem('userName');
-                localStorage.setItem('userName', name);
-
-                // Check if localStorage is storing the new name
-                console.log('Stored name:', localStorage.getItem('userName')); // Debugging line
-
-                // Redirect to the dashboard
-                window.location.href = "dashboard.html";
-            } else {
-                this.reportValidity();
-            }
-        });
-    </script>
+    <script src="register.js"></script>
 </body>
 </html>

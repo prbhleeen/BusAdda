@@ -1,0 +1,197 @@
+/* Profile Modal Styles */
+
+#employee-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Darker semi-transparent background */
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+}
+
+#employee-modal .modal-content {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 420px;
+    max-width: 90%;
+    padding: 30px 25px 25px 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    position: relative;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#employee-modal .close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #555555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#employee-modal .close-button:hover {
+    color: #e74c3c;
+}
+
+.employee-profile {
+    margin-bottom: 25px;
+}
+
+.employee-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #48a6a7;
+    box-shadow: 0 4px 12px rgba(72, 166, 167, 0.5);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.employee-avatar:hover {
+    transform: scale(1.05);
+}
+
+#employee-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #006a71;
+    margin-bottom: 6px;
+}
+
+#employee-id {
+    font-size: 14px;
+    color: #888888;
+    margin-bottom: 0;
+}
+
+.edit-profile-link {
+    display: inline-block;
+    font-size: 14px;
+    color: #48a6a7;
+    text-decoration: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.edit-profile-link:hover {
+    color: #006a71;
+    text-decoration: underline;
+}
+
+/* Edit Profile Form */
+
+#edit-profile-form {
+    text-align: left;
+}
+
+#edit-profile-form label {
+    font-weight: 600;
+    color: #333333;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+#edit-profile-form input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+}
+
+#edit-profile-form input[type="text"]:focus {
+    border-color: #48a6a7;
+    outline: none;
+}
+
+#avatar-options {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#avatar-options img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+#avatar-options img:hover {
+    transform: scale(1.1);
+}
+
+#avatar-options img.selected {
+    border-color: #48a6a7;
+    box-shadow: 0 0 8px rgba(72, 166, 167, 0.7);
+}
+
+/* Buttons */
+
+#edit-profile-form button {
+    width: 48%;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#save-profile-btn {
+    background-color: #48a6a7;
+    color: #fff;
+    margin-right: 4%;
+}
+
+#save-profile-btn:hover {
+    background-color: #3a8a8b;
+}
+
+#cancel-profile-btn {
+    background-color: #ccc;
+    color: #333;
+}
+
+#cancel-profile-btn:hover {
+    background-color: #999;
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+    #employee-modal .modal-content {
+        width: 95%;
+        padding: 20px 15px 15px 15px;
+    }
+
+    #avatar-options img {
+        width: 50px;
+        height: 50px;
+    }
+
+    #edit-profile-form button {
+        width: 100%;
+        margin: 6px 0;
+    }
+}

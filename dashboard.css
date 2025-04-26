@@ -1,8 +1,7 @@
-/* Full-page background */
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #f2efe7, #9acbd0); /* Updated colors */
+    background: linear-gradient(135deg, #f2efe7, #9acbd0); 
     height: 100vh;
     display: flex;
     align-items: center;
@@ -10,25 +9,50 @@ body {
     font-family: Arial, sans-serif;
 }
 
-
-/* Selection container */
 .selection-container {
-    background: rgba(255, 255, 255, 0.23); 
+    background: rgba(255, 255, 255, 0.23);
     padding: 40px;
     border-radius: 12px;
-    backdrop-filter: blur(7px); 
+    backdrop-filter: blur(7px);
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
     text-align: center;
-    width: 400px;
+    width: 300px;
     transition: 0.3s ease-in-out;
+    margin-bottom: 100px;
 }
 
-/* Heading */
 h2 {
-    color: #006a71; /* Updated color */
+    color: #006a71; 
     margin-bottom: 20px;
     font-size: 26px;
     font-weight: bolder;
+}
+
+.back-button {
+    background-color: #48A6A7; 
+    color: #F2EFE7; 
+    border: none;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.back-button:hover {
+    background-color: #9ACBD0; 
+    color: #006A71; 
 }
 
 /* Buttons */
@@ -36,8 +60,8 @@ button {
     width: 100%;
     padding: 14px;
     margin: 10px 0;
-    background-color: #48a6a7; /* Updated color */
-    color: #f2efe7; /* Updated color */
+    background-color: #48a6a7; 
+    color: #f2efe7; 
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -46,17 +70,40 @@ button {
     transition: 0.3s;
 }
 
-/* Button hover effect */
 button:hover {
-    background-color: #9acbd0; /* Updated color */
+    background-color: #ffce39; 
     transform: scale(1.05);
     box-shadow: 0px 4px 12px rgba(41, 128, 185, 0.5);
 }
 
-/* Button focus effect */
-button:focus {
+/* button:focus {
     outline: none;
     box-shadow: 0px 0px 15px rgba(52, 152, 219, 0.7);
+} */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffff;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.6em;
+    color: #6c757d;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 5px;
 }
 
 #guard-info {
@@ -68,18 +115,14 @@ button:focus {
     position: absolute; 
     top: 25px;
     right: 25px;    
-    background-color: #f2efe7; 
-
-
+    background-color: #f2efe7;
 }
 
 #guard-info:hover {
     font-weight: bold;
     cursor: pointer;
     background-color: #48a6a7; 
-    border: 2px solid #006a71; 
-
-
+    border: 2px solid #006a71;
 }
 
 .guard-avatar {
@@ -94,29 +137,31 @@ button:focus {
     margin-bottom: 2px;
 }
 
-/* Modal styles */
 .modal {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    backdrop-filter: blur(5px); /* Blur effect for the background */
+    background-color: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px); 
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
 
 .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     width: 400px;
     text-align: center;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-    position: relative;
+    position: fixed;
 }
 
 .close-button {
@@ -147,19 +192,47 @@ button:focus {
 
 .edit-profile-link {
     display: block;
-    font-size: 12px; /* Small font size */
-    color: #007bff; /* Link color */
+    font-size: 12px; 
+    color: #007bff; 
     text-decoration: none;
-    margin-top: 2px; /* Add some spacing */
+    margin-top: 2px; 
 }
 
 .edit-profile-link:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline; 
 }
 
 /* Responsive Design */
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     .selection-container {
-        width: 90%;
+        width: 65%;
+        padding: 20px;
+        margin-bottom: 120px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    button {
+        width: 75%;
+        font-size: 20px;
     }
 }
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.background-video {
+    position: absolute;
+    top: -60px; 
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+

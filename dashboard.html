@@ -4,10 +4,17 @@
     <link rel="icon" type="image/png" href="assets/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selection Page</title>
+    <title>Bus Adda | Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="profile-modal.css">
 </head>
 <body>
+    <video autoplay muted loop class="background-video">
+        <source src="assets/bus.mp4" type="video/mp4">
+    </video>
+    
+    <button class="back-button" onclick="history.back()">&#8592;</button>
+
     <div id="guard-info">
         <img src="static/guard.png" alt="Guard Avatar" class="guard-avatar">
     </div>
@@ -18,71 +25,45 @@
         <button class="select-btn departure-btn">Departure</button>
     </div>
     
-<div id="employee-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <div class="employee-profile">
-            <img src="static/guard.png" alt="Employee Avatar" class="employee-avatar">
-            <a href="#" class="edit-profile-link">Edit Profile</a>
-            <h2 id="employee-name">Employee Name</h2>
-            <p id="employee-id">Employee ID: 12345</p>
-            
+    <!-- Employee Profile Modal -->
+    <!-- Replaced with profile-modal.html content -->
+    <div id="employee-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="employee-profile" id="profile-display">
+                <img padding src="static/guard.png" alt="Employee Avatar" class="employee-avatar" id="avatar-image">
+                <div class="avatar-overlay" style="display: flex; align-items: center; gap: 6px;">
+                    <img src="photography.png" alt="Camera Icon" class="camera-icon" style="margin-left:8px;">
+                    <a href="#" class="edit-profile-link" id="edit-profile-link" style="margin: 0;">Edit Profile</a>
+                </div>
+                <h2 id="employee-name">Employee Name</h2>
+                <p id="employee-id">Employee ID: 12345</p>
+            </div>
+            <form id="edit-profile-form" style="display:none; text-align:left;">
+                <label for="avatar-input">Change Avatar:</label><br>
+                <input type="file" id="avatar-input" accept="image/*"><br><br>
+                <label for="name-input">Change Name:</label><br>
+                <input type="text" id="name-input" placeholder="Enter new name"><br><br>
+                <button type="button" id="save-profile-btn">Save</button>
+                <button type="button" id="cancel-profile-btn">Cancel</button>
+            </form>
         </div>
     </div>
-</div>
 
-    
-    <script>
-        const userName = localStorage.getItem("userName") || "Guest";
-        document.getElementById("welcome-message").textContent = `Welcome, ${userName}!`;
+    <!-- Footer with Terms and Conditions -->
+    <footer class="footer">
+        <p>
+            By using this site, you agree to our 
+            <a href="terms.html">Terms and Conditions</a> and 
+            <a href="privacy.html">Privacy Policy</a>.
+        </p>
+        <div class="copyright">&copy; 2025 BusAdda. All rights reserved.</div>
+    </footer>
 
-        const span = document.createElement("span");
-        span.className = "guard-name";
-        span.textContent = userName;
+    <script src="profile-edit.js"></script>
 
-        document.getElementById("guard-info").appendChild(span);
-        document.querySelector(".arrival-btn").addEventListener("click", () => {
-            window.location.href = `arrival.html?name=${encodeURIComponent(userName)}`;
-        });
-
-        document.querySelector(".departure-btn").addEventListener("click", () => {
-            window.location.href = `departure.html?name=${encodeURIComponent(userName)}`;
-        });
-
-        document.addEventListener("DOMContentLoaded", () => {
-    const guardInfo = document.getElementById("guard-info");
-    const modal = document.getElementById("employee-modal");
-    const closeButton = document.querySelector(".close-button");
-
-    console.log("UserName:", localStorage.getItem("userName"));
-    console.log("EmployeeID:", localStorage.getItem("employeeId"));
-
-     // Open modal on click
-     guardInfo.addEventListener("click", () => {
-        const userName = localStorage.getItem("userName") || "Guest";
-        const employeeId = localStorage.getItem("employeeId") || "Unknown";
-        
-
-        // Update modal content dynamically
-        document.getElementById("employee-name").textContent = userName;
-        document.getElementById("employee-id").textContent = `Employee ID: ${employeeId}`;
-
-        modal.style.display = "flex";
-    });
-
-    // Close modal on click of close button
-    closeButton.addEventListener("click", () => {
-        modal.style.display = "none";
-    });
-
-    // Close modal on clicking outside the modal content
-    window.addEventListener("click", (event) => {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-});
-
-    </script>
 </body>
 </html>
+
+
+      
