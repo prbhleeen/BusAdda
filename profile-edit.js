@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const userName = localStorage.getItem("userName") || "Guest";
     const userAvatar = localStorage.getItem("userAvatar") || "static/guard.png";
+    const employeeId = localStorage.getItem("employeeId") || "Unknown"; // Fetch employeeId from localStorage
 
     function updateUIWithUserData() {
         document.getElementById("welcome-message").textContent = `Welcome, ${userName}!`;
@@ -10,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.getElementById("employee-name").textContent = userName;
         document.getElementById("avatar-image").src = userAvatar;
+        document.getElementById("employee-id").textContent = `Employee ID: ${employeeId}`; // Update employee ID in the UI
     }
 
     updateUIWithUserData();
