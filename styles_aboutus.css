@@ -22,22 +22,13 @@ body {
 /* Header Content */
 .header-content {
     display: flex;
-    flex-direction: column; /* Stack elements vertically by default */
+    flex-direction: row; /* Stack elements vertically by default */
     align-items: center;
-    justify-content: center; /* Center items vertically and horizontally */
-    max-width: 1200px; /* Limit maximum width */
+    justify-content: space-between; /* Center items vertically and horizontally */
+    max-width: 1200px; /*Limit maximum width */
     margin: 0 auto; /* Center the content within the header */
     padding: 0 20px; /* Add horizontal padding */
     box-sizing: border-box; /* Include padding in width calculation */
-}
-
-/* Header Top Line (for logo, title, button) */
-.header-top-line {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%; /* Occupy full width of header content */
-    margin-bottom: 15px; /* Space between top line and navbar */
 }
 
 /* Logo */
@@ -185,6 +176,7 @@ p {
 
 .contributor-profile p {
     font-weight: bold;
+    text-align: center;
     font-size: 0.9em; /* Adjusted font size */
     margin-top: 5px;
 }
