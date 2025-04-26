@@ -80,11 +80,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 localStorage.setItem("userAvatar", base64Avatar);
                 updateUIWithUserData();
                 hideEditForm();
+                location.reload();
             };
             reader.readAsDataURL(avatarInput.files[0]);
         } else {
             updateUIWithUserData();
             hideEditForm();
+            location.reload();
         }
     });
 
