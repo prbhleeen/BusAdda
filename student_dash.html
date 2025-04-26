@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Adda | Student Dashboard</title>
+    <link rel="stylesheet" href="student_dash.css">
+    <link rel="stylesheet" href="profile-modal.css">
+</head>
+<body>
+    <video autoplay muted loop class="background-video">
+        <source src="assets/bus.mp4" type="video/mp4">
+    </video>
+    
+    <div id="guard-info">
+        <img src="static/guard.png" alt="Guard Avatar" class="guard-avatar">
+    </div>
+
+
+    <div class="selection-container">
+        <h2 id="welcome-message">Welcome, User!</h2>
+        <div class="cards">
+            <div class="feature-card" data-link="bus_feedback.html">
+                <h3> Bus Feedback </h3>
+                <img src="assets/feedback2.jpg">
+            </div>
+            <div class="feature-card" data-link="lost_found.html">
+                <h3> Lost & Found </h3>
+                <img src="assets/lost.jpg">
+            </div>
+            <div class="feature-card" data-link="live_updates.html">
+                <h3> Live Bus Updates </h3>
+                <img src="assets/bus.avif">
+            </div>
+        </div>
+    </div>
+        
+    <!-- <div id="employee-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="employee-profile" id="profile-display">
+                <img padding src="static/guard.png" alt="Employee Avatar" class="employee-avatar" id="avatar-image">
+                <div class="avatar-overlay" style="display: flex; align-items: center; gap: 6px;">
+                    <img src="photography.png" alt="Camera Icon" class="camera-icon" style="margin-left:8px;">
+                    <a href="#" class="edit-profile-link" id="edit-profile-link" style="margin: 0;">Edit Profile</a>
+                </div>
+                <h2 id="employee-name">Employee Name</h2>
+                <p id="employee-id">Employee ID: 12345</p>
+            </div>
+            <form id="edit-profile-form" style="display:none; text-align:left;">
+                <label for="avatar-input">Change Avatar:</label><br>
+                <input type="file" id="avatar-input" accept="image/*"><br><br>
+                <label for="name-input">Change Name:</label><br>
+                <input type="text" id="name-input" placeholder="Enter new name"><br><br>
+                <button type="button" id="save-profile-btn">Save</button>
+                <button type="button" id="cancel-profile-btn">Cancel</button>
+            </form>
+        </div>
+    </div> -->
+
+    <!-- Footer with Terms and Conditions -->
+    <footer class="footer">
+        <p>
+            By using this site, you agree to our 
+            <a href="terms.html">Terms and Conditions</a> and 
+            <a href="privacy.html">Privacy Policy</a>.
+        </p>
+        <div class="copyright">&copy; 2025 BusAdda. All rights reserved.</div>
+    </footer>
+
+    <script src="profile-edit.js"></script>
+    <script>
+        const cards = document.querySelectorAll('.feature-card');
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+            const link = card.getAttribute('data-link');
+            window.location.href = link; // Redirect to the page
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+      
