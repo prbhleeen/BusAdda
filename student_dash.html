@@ -12,54 +12,118 @@
     <video autoplay muted loop class="background-video">
         <source src="assets/bus.mp4" type="video/mp4">
     </video>
-    
+
     <div id="guard-info">
-        <img src="static/guard.png" alt="Guard Avatar" class="guard-avatar">
+        <img src="https://github.com/Sunaina-04/BusAdda/blob/main/assets/avatar.jpg?raw=true" alt="Guard Avatar" class="guard-avatar">
+        <span class="guard-name">User</span>
     </div>
 
     <div class="selection-container">
-        <h2 id="welcome-message">Welcome, User!</h2> <!-- This will be updated to show the student's name -->
+        <h2 id="welcome-message">Welcome, User!</h2>
         <div class="cards">
             <div class="feature-card" data-link="student_profile.html">
                 <h3> Student Profile </h3>
-                <img src="assets/avatar.jpg">
+                <img src="assets/avatar.jpg" alt="Student Profile">
             </div>
             <div class="feature-card" data-link="bus_feedback.html">
                 <h3> Bus Feedback </h3>
-                <img src="assets/feedback2.jpg">
+                <img src="assets/feedback2.jpg" alt="Bus Feedback">
             </div>
             <div class="feature-card" data-link="lost_found.html">
                 <h3> Lost & Found </h3>
-                <img src="assets/lost.jpg">
+                <img src="assets/lost.jpg" alt="Lost & Found">
             </div>
             <div class="feature-card" data-link="bus_req.html">
                 <h3> Request A Stop </h3>
-                <img src="assets/stop.jpg">
+                <img src="assets/stop.jpg" alt="Request A Stop">
             </div>
-
             <div class="feature-card" data-link="live_updates.html">
                 <h3> Live Bus Updates </h3>
-                <img src="assets/bus.avif">
+                <img src="assets/bus.avif" alt="Live Bus Updates">
             </div>
         </div>
     </div>
-        
-    <!-- Footer with Terms and Conditions -->
+
+    <div id="profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="profile-display">
+                <img id="student-avatar" src="https://github.com/Sunaina-04/BusAdda/blob/main/assets/avatar.jpg?raw=true" alt="Student Avatar" class="profile-avatar">
+                <h3 id="student-name">Student Name</h3>
+                <p id="student-rollno">Roll No: Unknown</p>
+                <a href="#" id="edit-profile-link">Edit Profile</a>
+            </div>
+            <form id="edit-profile-form" style="display: none;">
+                <h3>Edit Profile</h3>
+                <label for="name-input">Name:</label>
+                <input type="text" id="name-input" required><br><br>
+                <label for="avatar-input">Change Avatar:</label>
+                <input type="file" id="avatar-input" accept="image/*"><br><br>
+                <button type="button" id="save-profile-btn">Save Changes</button>
+                <button type="button" id="cancel-profile-btn">Cancel</button>
+            </form>
+        </div>
+    </div>
+
     <footer class="footer">
         <p>
-            By using this site, you agree to our 
-            <a href="terms.html">Terms and Conditions</a> and 
+            By using this site, you agree to our
+            <a href="terms.html">Terms and Conditions</a> and
             <a href="privacy.html">Privacy Policy</a>.
         </p>
         <div class="copyright">&copy; 2025 BusAdda. All rights reserved.</div>
     </footer>
 
-    <script src="profile-edit.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
     // Fetch user data from localStorage or set defaults
     const studentName = localStorage.getItem("studentName") || "Guest";
-    const studentAvatar = localStorage.getItem("studentAvatar") || "assets/avatar.jpg"; // Default avatar path
+    const studentGender = localStorage.getItem("gender"); // Retrieve gender
+    let studentAvatar = localStorage.getItem("studentAvatar");
+
+    // Default avatar paths (ENSURE THESE ARE CORRECT RAW URLs)
+    const defaultMaleAvatar = "https://github.com/Sunaina-04/BusAdda/blob/main/assets/male_avatar.png?raw=true";
+    const defaultFemaleAvatar = "https://github.com/Sunaina-04/BusAdda/blob/main/assets/avatar.jpg?raw=true";
+
+    // Set initial avatar based on gender IF no custom avatar is already set
+    if (!studentAvatar) {
+        if (studentGender && studentGender.toLowerCase() === "female") {
+            studentAvatar = defaultFemaleAvatar;
+        } else if (studentGender && studentGender.toLowerCase() === "male") {
+            studentAvatar = defaultMaleAvatar;
+        } else {
+            // Default to female if gender is not specified or invalid
+            studentAvatar = defaultFemaleAvatar;
+        }
+        localStorage.setItem("studentAvatar", studentAvatar); // Ensure the default based on gender is saved
+        console.log("Setting default avatar based on gender (initial):", studentGender, " - ", studentAvatar);
+    } else {
+        console.log("Custom studentAvatar already set:", studentAvatar);
+        // If a custom avatar exists, we keep it.
+    }
+
+    // Function to determine the current avatar based on stored gender and custom avatar
+    function getCurrentAvatar() {
+        const storedAvatar = localStorage.getItem("studentAvatar");
+        if (storedAvatar && !storedAvatar.startsWith("https://github.com/Sunaina-04/BusAdda/blob/main/assets/")) {
+            // If the stored avatar is not one of the default URLs, it's a custom one
+            return storedAvatar;
+        } else {
+            // Otherwise, determine based on gender
+            const currentGender = localStorage.getItem("gender");
+            if (currentGender && currentGender.toLowerCase() === "female") {
+                return defaultFemaleAvatar;
+            } else if (currentGender && currentGender.toLowerCase() === "male") {
+                return defaultMaleAvatar;
+            } else {
+                return defaultFemaleAvatar; // Default if gender is unknown
+            }
+        }
+    }
+
+    // Update the studentAvatar variable with the correct current avatar
+    studentAvatar = getCurrentAvatar();
+
     const studentRollNo = localStorage.getItem("rollNo") || "Unknown"; // Fetch roll number from localStorage
 
     // Update UI with student data
@@ -67,14 +131,18 @@
         // Welcome message
         document.getElementById("welcome-message").textContent = `Welcome, ${studentName}!`;
 
-        // Guard info (this section might not be relevant for a student, but can be customized as per requirements)
+        // Guard info
         const guardInfo = document.getElementById("guard-info");
         guardInfo.innerHTML = `<img src="${studentAvatar}" alt="Student Avatar" class="guard-avatar"><span class="guard-name">${studentName}</span>`;
 
-        // Update student profile section
+        // Update student profile section in the modal
+        const modalAvatar = document.getElementById("student-avatar");
+        if (modalAvatar) { // Check if the element exists
+            modalAvatar.src = studentAvatar;
+        }
         document.getElementById("student-name").textContent = studentName;
-        document.getElementById("student-avatar").src = studentAvatar;
-        document.getElementById("student-rollno").textContent = `Roll No: ${studentRollNo}`; // Update roll number in the UI
+
+        document.getElementById("student-rollno").textContent = `Roll No: ${studentRollNo}`;
     }
 
     // Call function to update UI
@@ -88,8 +156,30 @@
     const nameInput = document.getElementById("name-input");
     const saveBtn = document.getElementById("save-profile-btn");
     const cancelBtn = document.getElementById("cancel-profile-btn");
+    const profileModal = document.getElementById("profile-modal");
+    const closeButton = document.querySelector(".close-button");
 
-    // Open the profile edit form
+    // Open the profile modal
+    editProfileLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        profileDisplay.style.display = "block";
+        editForm.style.display = "none";
+        profileModal.style.display = "block";
+        nameInput.value = studentName; // Set current name in the input field
+    });
+
+    // Close the profile modal
+    closeButton.addEventListener("click", () => {
+        profileModal.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+        if (event.target == profileModal) {
+            profileModal.style.display = "none";
+        }
+    });
+
+    // Open the edit form inside the modal
     editProfileLink.addEventListener("click", (e) => {
         e.preventDefault();
         profileDisplay.style.display = "none";
@@ -117,13 +207,14 @@
                 localStorage.setItem("studentAvatar", base64Avatar); // Save avatar to localStorage
                 updateUIWithStudentData(); // Update UI with new avatar and name
                 hideEditForm();
-                location.reload(); // Reload page to reflect changes
             };
             reader.readAsDataURL(avatarInput.files[0]); // Convert selected image to base64 and save it
         } else {
-            updateUIWithStudentData(); // Update UI with new name if no avatar change
+            // If no new avatar is selected, we might want to reset to the gender-based default
+            localStorage.removeItem("studentAvatar"); // Remove the custom avatar flag
+            studentAvatar = getCurrentAvatar(); // Recalculate the avatar
+            updateUIWithStudentData(); // Update UI
             hideEditForm();
-            location.reload(); // Reload page to reflect changes
         }
     });
 
@@ -135,16 +226,15 @@
     }
 });
 
+// Handle feature card click events
+const cards = document.querySelectorAll('.feature-card');
 
-        // Handle feature card click events
-        const cards = document.querySelectorAll('.feature-card');
-
-        cards.forEach(card => {
-            card.addEventListener('click', () => {
-            const link = card.getAttribute('data-link');
-            window.location.href = link; // Redirect to the page
-            });
-        });
-    </script>
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        const link = card.getAttribute('data-link');
+        window.location.href = link; // Redirect to the page
+    });
+});
+</script>
 </body>
 </html>
