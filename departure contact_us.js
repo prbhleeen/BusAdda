@@ -67,7 +67,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 submissionMessage.textContent = 'Form submitted successfully!';
                 submissionMessage.className = 'submission-message success';
 
-                form.reset(); // ✅ Reset the form
+                form.reset(); 
+                // ✅ Reset the form
 
                 // Optional: Redirect after 2 seconds
                 setTimeout(() => {
