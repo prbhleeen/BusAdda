@@ -1,0 +1,54 @@
+body {
+    font-family: 'Segoe UI';
+    background: #9acbd0; 
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+.upload-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.605);
+    display: inline-block;
+    margin-top: 50px;
+  }
+
+input[type="file"] {
+    margin-top: 20px;
+  }
+
+.pdf-list {
+    text-align: left;
+    display: inline-block;
+  }
+
+.pdf-item {
+    margin-bottom: 10px;
+    border: 1px solid #006a71;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #a7d9de;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+
+  }
+
+.pdf-item a {
+    color: #006a71;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+.pdf-item:hover {
+    background-color: #ffce39;
+    cursor: pointer;
+
+  }
+
+h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+
