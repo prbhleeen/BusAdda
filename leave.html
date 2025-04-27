@@ -8,13 +8,16 @@
     <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
+
+  <div class="circle"></div>
+
     <div class="request-stop-form">
         <h2>Apply For Leave</h2>
         <form action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="35ce68cd-9b96-4256-8769-d0f67156453f">
           
-            <label for="route">Your Name:</label><br>
-            <input type="text" required><br>
+          <label for="name">Your Name:</label><br>
+          <input type="text" id="name" name="name" pattern="^[A-Za-z\s]+$" title="Name should contain only letters and spaces" required><br>
 
             <label for="route">Leave Start Date:</label><br>
             <input type="date" required><br>
