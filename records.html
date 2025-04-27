@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bus Adda | Records</title>
+  <link rel="stylesheet" href="records.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+
+</head>
+<body>
+
+<div class="upload-box">
+  <h2>Record Section</h2>
+
+  <div class="pdf-list" id="pdfList">
+    <!-- PDFs will be listed here -->
+  </div>
+
+  <hr style="margin: 30px 0;">
+
+  <h3>Upload New PDFs</h3>
+  <input type="file" id="pdfUploader" accept="application/pdf" multiple>
+</div>
+
+<script>
+    const pdfs = [
+      { name: 'Bus_log_27.04.25.pdf', path: 'pdfs/Bus_log_27.04.25.pdf' },
+      { name: 'Bus_log_26.04.25.pdf', path: 'pdfs/Bus_log_26.04.25.pdf' },
+      { name: 'Bus_log_25.04.25.pdf', path: 'pdfs/Bus_log_25.04.25.pdf' },
+    ];
+
+    const pdfList = document.getElementById('pdfList');
+    const pdfUploader = document.getElementById('pdfUploader');
+
+    // Function to display a PDF in the list
+    function displayPdf(name, url) {
+      const div = document.createElement('div');
+      div.classList.add('pdf-item');
+      div.innerHTML = `<a href="${url}" target="_blank">${name}</a>`;
+      pdfList.appendChild(div);
+    }
+
+    pdfs.forEach(pdf => {
+      displayPdf(pdf.name, pdf.path);
+    });
+
+    // Handle new uploads
+    pdfUploader.addEventListener('change', function() {
+      Array.from(this.files).forEach(file => {
+        const fileURL = URL.createObjectURL(file);
+        displayPdf(file.name, fileURL);
+      });
+    });
+</script>
+
+</body>
+</html>
