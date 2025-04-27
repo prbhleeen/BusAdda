@@ -23,3 +23,7 @@
 - contact us page added
 - terms and conditions + privacy policy added
 - export as pdf functionality added
+- home page added
+- created separate dashboards for student and guards
+- features added for students: view student profile, bus feedback, lost & found, request a new stop
+  
