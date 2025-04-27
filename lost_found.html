@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bus Adda | Lost and Found</title>
   <link rel="stylesheet" href="lost_found.css">
-  <link rel="icon" type="image/png" href="assets/logo.png">
-
 </head>
 <body>
+  <div class="background-circles">
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="circle3"></div>
+    <div class="circle4-left"></div>
+  </div>
 
 <div class="lostfound-container">
   <h1>Bus Adda - Lost and Found Form</h1>
@@ -30,7 +34,7 @@
 
     <div class="form-group">
       <label for="bus-number">Bus Number:</label>
-      <input type="text" id="bus-number" name="bus-number" required>
+      <input type="text" id="bus-number" name="bus-number" pattern="[0-9]+" title="Only numbers are allowed" min="0" max="100" required> 
     </div>
 
     <!-- Is it Lost or Found -->
@@ -94,7 +98,12 @@
 
     <div class="form-group">
       <label for="contact-number">Your Contact Number:</label>
-      <input type="tel" id="contact-number" name="contact-number" placeholder="Enter your mobile number" required>
+      <input type="tel" id="contact-number" name="contact-number" pattern="^\+?\d{10,15}$" title="Enter a valid phone number with 10 to 15 digits, optionally starting with +" placeholder="Enter your mobile number" required>
+    </div>
+
+    <div class="form-group">
+      <label for="item-photo">Upload or Capture Photo of the Item:</label>
+      <input type="file" id="item-photo" name="item-photo" accept="image/*" capture="environment">
     </div>
 
     <button type="submit" class="submit-btn">Submit Report</button>
