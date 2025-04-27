@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bus Adda | Lost and Found</title>
+  <link rel="stylesheet" href="lostfound.css">
+</head>
+<body>
+
+<div class="lostfound-container">
+  <h1>Bus Adda - Lost and Found Form</h1>
+  <p>Please report an item you have lost or found in the bus service.</p>
+
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="35ce68cd-9b96-4256-8769-d0f67156453f">
+
+    <!-- Student Details -->
+    <div class="form-group">
+      <label for="student-name">Your Name:</label>
+      <input type="text" id="student-name" name="student-name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="roll-number">Roll Number:</label>
+      <input type="text" id="roll-number" name="roll-number" required>
+    </div>
+
+    <div class="form-group">
+      <label for="bus-number">Bus Number:</label>
+      <input type="text" id="bus-number" name="bus-number" required>
+    </div>
+
+    <!-- Is it Lost or Found -->
+    <div class="form-group">
+      <label for="status">Is the item Lost or Found?</label>
+      <select id="status" name="status" required>
+        <option value="">Select</option>
+        <option>Lost</option>
+        <option>Found</option>
+      </select>
+    </div>
+
+    <!-- Item Details -->
+    <div class="form-group">
+      <label for="item-name">Item Name:</label>
+      <input type="text" id="item-name" name="item-name" placeholder="e.g., Water bottle, Notebook" required>
+    </div>
+
+    <div class="form-group">
+      <label for="item-color">Color of the Item:</label>
+      <input type="text" id="item-color" name="item-color" placeholder="e.g., Blue, Red, Black">
+    </div>
+
+    <div class="form-group">
+      <label for="item-material">Material of the Item:</label>
+      <input type="text" id="item-material" name="item-material" placeholder="e.g., Plastic, Metal, Fabric">
+    </div>
+
+    <div class="form-group">
+      <label for="item-dimensions">Dimensions/Size of the Item:</label>
+      <input type="text" id="item-dimensions" name="item-dimensions" placeholder="e.g., Small, Medium, 30cm x 15cm">
+    </div>
+
+    <!-- Location & Time -->
+    <div class="form-group">
+      <label for="location">Location where item was Lost or Found:</label>
+      <input type="text" id="location" name="location" placeholder="e.g., Near seat 12, back door" required>
+    </div>
+
+    <div class="form-group">
+      <label for="time">Approximate Time of Loss or Found:</label>
+      <input type="datetime-local" id="time" name="time" required>
+    </div>
+
+    <!-- Situation Details -->
+    <div class="form-group">
+      <label for="last-seen">Explain the situation (how/when the item was Lost or Found):</label>
+      <textarea id="last-seen" name="last-seen" rows="3" placeholder="Briefly describe what happened..." required></textarea>
+    </div>
+
+    <!-- Other Details -->
+    <div class="form-group">
+      <label for="urgency">How urgent is it to return or find the item?</label>
+      <select id="urgency" name="urgency">
+        <option value="">Select urgency</option>
+        <option>High (urgent)</option>
+        <option>Medium</option>
+        <option>Low</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="contact-number">Your Contact Number:</label>
+      <input type="tel" id="contact-number" name="contact-number" placeholder="Enter your mobile number" required>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Report</button>
+  </form>
+</div>
+
+</body>
+</html>
+
+
+
