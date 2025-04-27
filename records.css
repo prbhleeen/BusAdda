@@ -1,4 +1,76 @@
 body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #80deea);
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.upload-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  margin-top: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.upload-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+input[type="file"] {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #80deea;
+  border-radius: 8px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="file"]:hover {
+  border-color: #26c6da;
+  background-color: #e0f7fa;
+}
+
+.pdf-list {
+  text-align: left;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.pdf-item {
+  margin-bottom: 15px;
+  border: 1px solid #26c6da;
+  border-radius: 12px;
+  padding: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pdf-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pdf-item a {
+  color: #00796b;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.pdf-item a:hover {
+  color: #004d40;
+  text-decoration: underline;
+}
+
+/* body {
     font-family: 'Segoe UI';
     background: #9acbd0; 
     margin: 0;
@@ -51,4 +123,4 @@ h3 {
     color: #333;
     margin-bottom: 10px;
   }
-
+ */
