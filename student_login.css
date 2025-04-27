@@ -217,3 +217,45 @@ input::placeholder {
     color: #999;
 }
 
+nput[type="text"], input[type="number"], select {
+    width: 100%; /* Full width */
+    padding: 10px; /* Same padding as input fields */
+    margin: 10px 0; /* Same margin as input fields */
+    border: 1px solid #B1C29E; /* Match the border color */
+    border-radius: 5px; /* Match the border radius */
+    font-size: 16px; /* Match font size */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    background-color: #fff; /* White background */
+    color: #333; /* Text color */
+    appearance: none; /* Remove default dropdown arrow styling */
+}
+
+select {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23333" d="M0 0L2 2L4 0z"/></svg>'); /* Custom downward arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
+/* Style the placeholder-like option */
+select option[value=""] {
+    font-style: italic; /* Match input placeholder style */
+    color: #999; /* Match input placeholder color */
+}
+
+/* Ensure the selected option has normal styling */
+select:not(:focus) option[value=""]:checked {
+    color: #999; /* Keep placeholder color when not focused */
+}
+
+/* When the select is focused, ensure the placeholder is not selected */
+select:focus option[value=""] {
+    display: none; /* Hide placeholder when dropdown is open */
+}
+/* Focus state for input and select */
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #8AA37B; /* Highlight border on focus */
+}
+
+
