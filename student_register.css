@@ -13,6 +13,7 @@ body {
     overflow: hidden;
 }
 
+/* Decorative floating circles */
 body::before, body::after {
     content: '';
     position: absolute;
@@ -153,7 +154,7 @@ body::after {
 }
 
 /* Input fields */
-input[type="text"], input[type="number"] {
+input[type="text"], input[type="number"], select {
     border: 1px solid #B1C29E;
     padding: 10px;
     width: 100%;
@@ -165,9 +166,14 @@ input[type="text"], input[type="number"] {
 }
 
 /* Focused input fields */
-input[type="text"]:focus, input[type="number"]:focus {
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
     border-color: #48a6a7;
     outline: none;
+}
+
+/* Gender radio buttons */
+div input[type="radio"] {
+    margin: 5px 10px;
 }
 
 /* Buttons */
@@ -179,6 +185,7 @@ button {
     cursor: pointer;
     border-radius: 5px;
     font-size: 1rem;
+    width: 100%;
 }
 
 button:hover {
