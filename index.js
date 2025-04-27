@@ -17,7 +17,7 @@ document.getElementById("login-form").addEventListener("submit", function (event
         console.log('Stored name:', localStorage.getItem('userName')); // Debugging line
 
         // Redirect to the dashboard
-        window.location.href = "index.html";
+        window.location.href = "dashboard.html";
     } else {
         this.reportValidity();
     }

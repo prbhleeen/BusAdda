@@ -120,6 +120,13 @@ body {
     color: #555;
     margin-bottom: 10px;
 }
+
+.author-info ul {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+
 .author-links a {
     color: #007bff;
     text-decoration: none;
