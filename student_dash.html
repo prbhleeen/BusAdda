@@ -17,9 +17,8 @@
         <img src="static/guard.png" alt="Guard Avatar" class="guard-avatar">
     </div>
 
-
     <div class="selection-container">
-        <h2 id="welcome-message">Welcome, User!</h2>
+        <h2 id="welcome-message">Welcome, User!</h2> <!-- This will be updated to show the student's name -->
         <div class="cards">
             <div class="feature-card" data-link="student_profile.html">
                 <h3> Student Profile </h3>
@@ -45,29 +44,6 @@
         </div>
     </div>
         
-    <!-- <div id="employee-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <div class="employee-profile" id="profile-display">
-                <img padding src="static/guard.png" alt="Employee Avatar" class="employee-avatar" id="avatar-image">
-                <div class="avatar-overlay" style="display: flex; align-items: center; gap: 6px;">
-                    <img src="photography.png" alt="Camera Icon" class="camera-icon" style="margin-left:8px;">
-                    <a href="#" class="edit-profile-link" id="edit-profile-link" style="margin: 0;">Edit Profile</a>
-                </div>
-                <h2 id="employee-name">Employee Name</h2>
-                <p id="employee-id">Employee ID: 12345</p>
-            </div>
-            <form id="edit-profile-form" style="display:none; text-align:left;">
-                <label for="avatar-input">Change Avatar:</label><br>
-                <input type="file" id="avatar-input" accept="image/*"><br><br>
-                <label for="name-input">Change Name:</label><br>
-                <input type="text" id="name-input" placeholder="Enter new name"><br><br>
-                <button type="button" id="save-profile-btn">Save</button>
-                <button type="button" id="cancel-profile-btn">Cancel</button>
-            </form>
-        </div>
-    </div> -->
-
     <!-- Footer with Terms and Conditions -->
     <footer class="footer">
         <p>
@@ -80,6 +56,87 @@
 
     <script src="profile-edit.js"></script>
     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    // Fetch user data from localStorage or set defaults
+    const studentName = localStorage.getItem("studentName") || "Guest";
+    const studentAvatar = localStorage.getItem("studentAvatar") || "assets/avatar.jpg"; // Default avatar path
+    const studentRollNo = localStorage.getItem("rollNo") || "Unknown"; // Fetch roll number from localStorage
+
+    // Update UI with student data
+    function updateUIWithStudentData() {
+        // Welcome message
+        document.getElementById("welcome-message").textContent = `Welcome, ${studentName}!`;
+
+        // Guard info (this section might not be relevant for a student, but can be customized as per requirements)
+        const guardInfo = document.getElementById("guard-info");
+        guardInfo.innerHTML = `<img src="${studentAvatar}" alt="Student Avatar" class="guard-avatar"><span class="guard-name">${studentName}</span>`;
+
+        // Update student profile section
+        document.getElementById("student-name").textContent = studentName;
+        document.getElementById("student-avatar").src = studentAvatar;
+        document.getElementById("student-rollno").textContent = `Roll No: ${studentRollNo}`; // Update roll number in the UI
+    }
+
+    // Call function to update UI
+    updateUIWithStudentData();
+
+    // Handle profile edit form and save functionality
+    const editProfileLink = document.getElementById("edit-profile-link");
+    const editForm = document.getElementById("edit-profile-form");
+    const profileDisplay = document.getElementById("profile-display");
+    const avatarInput = document.getElementById("avatar-input");
+    const nameInput = document.getElementById("name-input");
+    const saveBtn = document.getElementById("save-profile-btn");
+    const cancelBtn = document.getElementById("cancel-profile-btn");
+
+    // Open the profile edit form
+    editProfileLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        profileDisplay.style.display = "none";
+        editForm.style.display = "block";
+        nameInput.value = studentName; // Set current name in the input field
+    });
+
+    // Cancel editing the profile
+    cancelBtn.addEventListener("click", () => {
+        hideEditForm();
+    });
+
+    // Save profile changes
+    saveBtn.addEventListener("click", () => {
+        const newName = nameInput.value.trim();
+        if (newName) {
+            localStorage.setItem("studentName", newName); // Save new name to localStorage
+        }
+
+        // Save the new avatar if a new one is selected
+        if (avatarInput.files && avatarInput.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const base64Avatar = e.target.result;
+                localStorage.setItem("studentAvatar", base64Avatar); // Save avatar to localStorage
+                updateUIWithStudentData(); // Update UI with new avatar and name
+                hideEditForm();
+                location.reload(); // Reload page to reflect changes
+            };
+            reader.readAsDataURL(avatarInput.files[0]); // Convert selected image to base64 and save it
+        } else {
+            updateUIWithStudentData(); // Update UI with new name if no avatar change
+            hideEditForm();
+            location.reload(); // Reload page to reflect changes
+        }
+    });
+
+    // Hide the edit form and show the profile display
+    function hideEditForm() {
+        editForm.style.display = "none";
+        profileDisplay.style.display = "block";
+        avatarInput.value = ""; // Clear avatar input
+    }
+});
+
+
+        // Handle feature card click events
         const cards = document.querySelectorAll('.feature-card');
 
         cards.forEach(card => {
@@ -89,9 +146,5 @@
             });
         });
     </script>
-
 </body>
 </html>
-
-
-      
