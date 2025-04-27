@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #f2efe7, #9acbd0); 
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,10 +16,10 @@ body {
     backdrop-filter: blur(7px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.646);
     text-align: center;
-    width: 750px;
+    width: 850px;
     transition: 0.3s ease-in-out;
     margin-bottom: 100px;
-    margin-top: 20px;
+    margin-top: 70px;
 }
 
 h2 {
@@ -30,7 +30,7 @@ h2 {
     font-weight: bolder;
 }
 
-/* Buttons */
+/* Buttons
 button {
     width: 100%;
     padding: 14px;
@@ -49,7 +49,7 @@ button:hover {
     background-color: #ffce39; 
     transform: scale(1.05);
     box-shadow: 0px 4px 12px rgba(41, 128, 185, 0.5);
-}
+} */
 
 h3 {
     color: #006a71; 
@@ -57,6 +57,7 @@ h3 {
 
 .cards {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px; 
     justify-content: center; 
     align-items: center; 
@@ -218,18 +219,18 @@ h3 {
     h2 {
         font-size: 20px;
     }
-    button {
+    /* button {
         width: 75%;
         font-size: 20px;
-    }
+    } */
 }
 
-body, html {
+/* body, html {
     margin: 0;
     padding: 0;
     overflow: hidden;
     height: 100vh;
-}
+} */
 
 .background-video {
     position: absolute;
