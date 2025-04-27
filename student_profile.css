@@ -1,0 +1,308 @@
+/* Enhanced General Styles with More Vibrant Gradient */
+body {
+    background: linear-gradient(135deg, #29abe2, #00bcd4, #4dd0e1); /* More vibrant cyan shades */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: vibrantBackgroundPan 15s infinite alternate; /* Slower, more noticeable pan */
+}
+
+@keyframes vibrantBackgroundPan {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Enhanced Profile Container */
+.profile-container {
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+    text-align: center;
+    z-index: 1;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Added shadow transition */
+}
+
+.profile-container:hover {
+    transform: scale(1.03); /* More noticeable hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+}
+
+/* Enhanced Profile Header (Avatar and Name) */
+.profile-header {
+    text-align: center;
+    margin-bottom: 35px; /* Slightly more space */
+}
+
+.avatar {
+    width: 170px; /* Even larger avatar */
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #b2ebf2; /* Brighter border */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* More defined shadow */
+    transition: border-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Added transform */
+}
+
+.avatar:hover {
+    border-color: #29abe2;
+    transform: rotate(5deg) scale(1.05); /* Subtle rotation and scale on hover */
+}
+
+.profile-header h2 {
+    font-size: 30px; /* Even larger name */
+    margin-top: 20px;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px #ddd; /* Slightly stronger text shadow */
+}
+
+/* Enhanced Profile Details Card */
+.profile-details-card {
+    margin-top: 35px; /* Slightly more space */
+}
+
+.profile-details p {
+    font-size: 17px; /* Slightly larger font */
+    margin: 10px 0;
+    text-align: left;
+    color: #444; /* Darker color */
+    line-height: 1.6; /* Improved line height for readability */
+}
+
+.profile-details strong {
+    font-weight: 700; /* Bolder */
+    color: #222;
+}
+
+.profile-details {
+    background-color: #e0f7fa; /* Even lighter background */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* More noticeable shadow */
+    margin-bottom: 30px;
+    text-align: left;
+    border-left: 8px solid #29abe2; /* Thicker, more prominent accent border */
+}
+
+/* Enhanced Button Styles */
+button {
+    background-color: #29abe2; /* More vibrant button color */
+    color: white;
+    border: none;
+    padding: 14px 28px; /* Slightly larger padding */
+    cursor: pointer;
+    border-radius: 10px; /* Even more rounded */
+    font-size: 20px; /* Larger font */
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    margin-top: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* More defined shadow */
+}
+
+button:hover {
+    background-color: #00bcd4; /* Slightly darker shade on hover */
+    transform: translateY(-3px); /* More noticeable lift */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Enhanced Back Button */
+.back-button {
+    background-color: #29ABE2; /* More vibrant */
+    color: #F0F8FF; /* Light text */
+    border: none;
+    padding: 10px 18px; /* Adjusted padding */
+    font-size: 1.2em; /* Slightly larger font */
+    font-weight: bold;
+    border-radius: 10px; /* More rounded */
+    cursor: pointer;
+    position: fixed;
+    top: 25px; /* Adjusted position */
+    left: 25px; /* Adjusted position */
+    z-index: 10;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.back-button:hover {
+    background-color: #00BCD4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced Edit Profile Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3; /* Ensure above other elements */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+    padding-top: 60px;
+    backdrop-filter: blur(8px); /* More pronounced blur */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 35px; /* Increased padding */
+    border: none; /* Removed default border */
+    width: 90%;
+    max-width: 550px; /* Slightly wider */
+    border-radius: 15px; /* Even more rounded */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* More prominent shadow */
+    position: relative;
+    animation: fadeIn 0.4s ease-out; /* Slightly longer fade-in */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal input, .modal select {
+    width: calc(100% - 24px); /* Adjust for increased padding and border */
+    padding: 14px; /* Increased padding */
+    margin: 10px 0 25px; /* Increased vertical spacing */
+    border: 2px solid #ddd; /* Slightly thicker border */
+    border-radius: 10px; /* More rounded */
+    box-sizing: border-box;
+    font-size: 17px; /* Slightly larger font */
+}
+
+.modal input:focus, .modal select:focus {
+    border-color: #29abe2;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle focus shadow */
+}
+
+.modal button[type="submit"] {
+    background-color: #5cb85c; /* Green for save */
+    color: white;
+    padding: 14px 28px; /* Adjusted padding */
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; /* More rounded */
+    font-size: 20px; /* Adjusted font size */
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    margin-top: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.modal button[type="submit"]:hover {
+    background-color: #4cae4c;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    color: #888; /* Slightly darker close button */
+    font-size: 40px; /* Even larger */
+    font-weight: bold;
+    position: absolute;
+    right: 20px; /* Adjusted position */
+    top: 15px; /* Adjusted position */
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Added transform */
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.1); /* Subtle scale on hover */
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .profile-container {
+        padding: 30px;
+        margin: 25px auto;
+        width: 98%; /* Take up more width */
+    }
+
+    .avatar {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-header h2 {
+        font-size: 26px;
+    }
+
+    .profile-details p {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 12px 24px;
+        font-size: 18px;
+    }
+
+    .back-button {
+        font-size: 1.1em;
+        top: 20px;
+        left: 20px;
+    }
+
+    .modal-content {
+        margin: 15% auto; /* Adjust modal margin */
+        padding: 30px;
+    }
+
+    .modal input, .modal select {
+        font-size: 16px;
+    }
+
+    .close-btn {
+        font-size: 34px;
+        right: 15px;
+        top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-header h2 {
+        font-size: 22px;
+    }
+
+    .profile-details p {
+        font-size: 15px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+
+    .modal-content {
+        padding: 25px;
+    }
+
+    .modal input, .modal select {
+        font-size: 15px;
+    }
+
+    .close-btn {
+        font-size: 30px;
+        right: 10px;
+        top: 5px;
+    }
+}

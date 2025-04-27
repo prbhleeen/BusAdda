@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Stop Request Form</title>
+    <link rel="stylesheet" href="bus_req.css">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+    <div class="request-stop-form">
+        <h2>Request a New Bus Stop</h2>
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="35ce68cd-9b96-4256-8769-d0f67156453f">
+          
+            <label for="route">Your Name:</label><br>
+            <input type="text" required><br>
+
+            <label for="route">University Roll Number:</label><br>
+            <input type="number" required><br>
+  
+  
+          <label for="route">Bus Route Number:</label><br>
+          <input type="number" id="route" name="route" required><br>
+      
+          <label for="stopName">Proposed Stop Name:</label><br>
+          <input type="text" id="stopName" name="stopName" required><br>
+      
+          <label for="location">Location Details:</label><br>
+          <textarea id="location" name="location" rows="3" required></textarea><br>
+      
+          <label for="reason">Reason for Request:</label><br>
+          <textarea id="reason" name="reason" rows="3" required></textarea><br>
+      
+          <button type="submit" class="submit-btn">Submit Request</button>
+        </form>
+
+      </div>
+   <script href="script.js"></script>   
+</body>
+</html>

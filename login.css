@@ -89,6 +89,35 @@ body::after {
     background-color: #9ACBD0; /* Light teal on hover */
     color: #006A71; /* Dark teal text on hover */
 }
+/* Floating Contact Us Button */
+.contact-us-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #48a6a7;
+    color: white;
+    border: 2px solid #006a71;
+    border-radius: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-us-button:hover {
+    background-color: #f2efe7;
+    color: #006a71;
+    transform: scale(1.05);
+}
+
+.contact-us-button:active {
+    transform: scale(0.95);
+}
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-5px); }
@@ -158,6 +187,11 @@ button:hover {
     text-decoration: underline;
 
 }
+.contact-us-button {
+    font-size: 13px;
+    padding: 10px 16px;
+}
+
 
 
 

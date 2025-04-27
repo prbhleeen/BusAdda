@@ -1,0 +1,245 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f2efe7, #9acbd0); 
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI';
+}
+
+.selection-container {
+    background: rgba(255, 255, 255, 0.23);
+    padding: 40px;
+    border-radius: 12px;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.646);
+    text-align: center;
+    width: 850px;
+    transition: 0.3s ease-in-out;
+    margin-bottom: 100px;
+    margin-top: 70px;
+}
+
+h2 {
+    color: #006a71; 
+    margin-bottom: 30px;
+    margin-top: -10px;
+    font-size: 26px;
+    font-weight: bolder;
+}
+
+/* Buttons
+button {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    background-color: #48a6a7; 
+    color: #f2efe7; 
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ffce39; 
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(41, 128, 185, 0.5);
+} */
+
+h3 {
+    color: #006a71; 
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  .feature-card {
+    background-color:#79c4c7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.646);
+
+  }
+
+  .feature-card img{
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+  }
+
+.feature-card:hover{
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.646);
+    transition: transform 0.3s ease;
+    background-color: #ffce39; 
+    cursor: pointer;
+    color: #333;
+    transform: translateY(-10px);
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffff;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.6em;
+    color: #6c757d;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 5px;
+}
+
+#guard-info {
+    border: 2px solid #9acbd0;  
+    padding: 8px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    position: absolute; 
+    top: 25px;
+    right: 25px;    
+    background-color: #f2efe7;
+}
+
+#guard-info:hover {
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #48a6a7; 
+    border: 2px solid #006a71;
+}
+
+.guard-avatar {
+    width: 20px;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.guard-name {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px); 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    position: fixed;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-button:hover {
+    color: #ff0000;
+}
+
+.employee-profile {
+    text-align: center;
+}
+
+.employee-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.edit-profile-link {
+    display: block;
+    font-size: 12px; 
+    color: #007bff; 
+    text-decoration: none;
+    margin-top: 2px; 
+}
+
+.edit-profile-link:hover {
+    text-decoration: underline; 
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .selection-container {
+        width: 65%;
+        padding: 20px;
+        margin-bottom: 120px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    /* button {
+        width: 75%;
+        font-size: 20px;
+    } */
+}
+
+/* body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+} */
+
+.background-video {
+    position: absolute;
+    top: -60px; 
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+

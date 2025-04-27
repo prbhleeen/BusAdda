@@ -170,7 +170,8 @@ body {
     margin-left: 40px;
 }
 .read-more {    
-    color: #0062cb; 
+    color: #0062cb;
+    text-decoration: none; 
 }
 .read-more:hover {
     color: #333;                     

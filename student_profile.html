@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="student_profile.css">
+</head>
+<body>
+
+    <div class="background-animation">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <button class="back-button" onclick="history.back()">&#8592; Back</button>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <img id="student-avatar" class="avatar" src="assets/avatar.jpg" alt="Avatar">
+            <h2 id="student-name">Student Name</h2>
+        </div>
+
+        <div class="profile-details-card">
+            <div class="profile-details">
+                <p><strong>Roll No:</strong> <span id="student-roll-no">Not Available</span></p>
+                <p><strong>Route No:</strong> <span id="student-route-no">Not Available</span></p>
+                <p><strong>City:</strong> <span id="student-city">Not Available</span></p>
+                <p><strong>Fee Status:</strong> <span id="student-fee-status">Paid</span></p>
+                <p><strong>Fees:</strong> <span id="student-fees">Not Available</span></p>
+            </div>
+            <button id="edit-profile-btn">Edit Profile</button>
+        </div>
+    </div>
+
+    <div id="edit-profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <h2>Edit Profile</h2>
+            <form id="edit-profile-form">
+                <label for="edit-name">Name:</label>
+                <input type="text" id="edit-name" name="edit-name" required>
+
+                <label for="edit-rollno">Roll No:</label>
+                <input type="text" id="edit-rollno" name="edit-rollno" required>
+
+                <label for="edit-route">Route No:</label>
+                <input type="text" id="edit-route" name="edit-route" required>
+
+                <label for="edit-city">City:</label>
+                <input type="text" id="edit-city" name="edit-city" required>
+
+                <label for="edit-fee-status">Fee Status:</label>
+                <select id="edit-fee-status" name="edit-fee-status">
+                    <option value="Paid" selected>Paid</option>
+                </select>
+
+                <label for="edit-fees">Fees:</label>
+                <input type="text" id="edit-fees" name="edit-fees" readonly>
+
+                <label for="edit-gender">Gender:</label>
+                <select id="edit-gender" name="edit-gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        
+document.addEventListener("DOMContentLoaded", () => {
+    // Fetch user data from localStorage
+    const studentName = localStorage.getItem("studentName") || "Guest";
+    const studentGender = localStorage.getItem("gender") || "male"; 
+    const studentRollNo = localStorage.getItem("rollNo") || "Unknown";
+    const studentRouteNo = localStorage.getItem("routeNo") || "Not Available";
+    const studentCity = localStorage.getItem("city") || "Not Available";
+    const studentFeeStatus = localStorage.getItem("feeStatus") || "Paid";
+    const studentFees = localStorage.getItem("fees") || "Not Available";
+
+    // Corrected fetching avatar
+    let studentAvatar = localStorage.getItem("avatarUrl") || getAvatarByGender(studentGender);
+
+    // Function to get avatar based on gender
+    function getAvatarByGender(gender) {
+        switch (gender.toLowerCase()) {
+            case "male":
+                return "https://github.com/Sunaina-04/BusAdda/blob/main/assets/male_avatar.png?raw=true";
+            case "female":
+                return "https://github.com/Sunaina-04/BusAdda/blob/main/assets/avatar.jpg?raw=true";
+            default:
+                return "assets/default_avatar.png";
+        }
+    }
+
+    // Update UI
+    function updateUIWithStudentData() {
+        document.getElementById("student-avatar").src = studentAvatar;
+        document.getElementById("student-name").textContent = studentName;
+        document.getElementById("student-roll-no").textContent = studentRollNo;
+        document.getElementById("student-route-no").textContent = studentRouteNo;
+        document.getElementById("student-city").textContent = studentCity;
+        document.getElementById("student-fee-status").textContent = studentFeeStatus;
+        document.getElementById("student-fees").textContent = studentFees;
+        document.getElementById("edit-gender").value = studentGender;
+    }
+
+    updateUIWithStudentData();
+
+    // Modal handling
+    const editProfileBtn = document.getElementById("edit-profile-btn");
+    const closeBtn = document.getElementById("close-btn");
+    const editProfileModal = document.getElementById("edit-profile-modal");
+
+    editProfileBtn.addEventListener("click", () => {
+        editProfileModal.style.display = "block";
+
+        // Fill form with current data
+        document.getElementById("edit-name").value = studentName;
+        document.getElementById("edit-rollno").value = studentRollNo;
+        document.getElementById("edit-route").value = studentRouteNo;
+        document.getElementById("edit-city").value = studentCity;
+        document.getElementById("edit-fee-status").value = studentFeeStatus;
+        document.getElementById("edit-fees").value = studentFees;
+        document.getElementById("edit-gender").value = studentGender;
+    });
+
+    closeBtn.addEventListener("click", () => {
+        editProfileModal.style.display = "none";
+    });
+
+    // Form submission
+    const editForm = document.getElementById("edit-profile-form");
+    editForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const newName = document.getElementById("edit-name").value.trim();
+        const newRollNo = document.getElementById("edit-rollno").value.trim();
+        const newRouteNo = document.getElementById("edit-route").value.trim();
+        const newCity = document.getElementById("edit-city").value.trim();
+        const newGender = document.getElementById("edit-gender").value;
+        const newAvatar = getAvatarByGender(newGender);
+
+        // Save updated data
+        localStorage.setItem("studentName", newName);
+        localStorage.setItem("rollNo", newRollNo);
+        localStorage.setItem("routeNo", newRouteNo);
+        localStorage.setItem("city", newCity);
+        localStorage.setItem("gender", newGender);
+        localStorage.setItem("avatarUrl", newAvatar); // Important: update avatarUrl also
+
+        // Reload page to apply changes immediately
+        location.reload();
+    });
+});
+
+
+    </script>
+
+</body>
+</html>

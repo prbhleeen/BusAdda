@@ -4,7 +4,7 @@
     <link rel="icon" type="image/png" href="assets/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bus Adda | Dashboard</title>
+    <title>Bus Adda | Guard Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="profile-modal.css">
 </head>
@@ -13,7 +13,7 @@
         <source src="assets/bus.mp4" type="video/mp4">
     </video>
     
-    <button class="back-button" onclick="history.back()">&#8592;</button>
+    <!-- <button class="back-button" onclick="history.back()">&#8592;</button> -->
 
     <div id="guard-info">
         <img src="static/guard.png" alt="Guard Avatar" class="guard-avatar">
@@ -27,13 +27,13 @@
     
     <!-- Employee Profile Modal -->
     <!-- Replaced with profile-modal.html content -->
-    <div id="employee-modal" class="modal">
+    <div id="employee-modal" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <div class="employee-profile" id="profile-display">
                 <img padding src="static/guard.png" alt="Employee Avatar" class="employee-avatar" id="avatar-image">
                 <div class="avatar-overlay" style="display: flex; align-items: center; gap: 6px;">
-                    <img src="photography.png" alt="Camera Icon" class="camera-icon" style="margin-left:8px;">
+                    <img src="static/photography.png" alt="Camera Icon" class="camera-icon" style="margin-left:8px;">
                     <a href="#" class="edit-profile-link" id="edit-profile-link" style="margin: 0;">Edit Profile</a>
                 </div>
                 <h2 id="employee-name">Employee Name</h2>

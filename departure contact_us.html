@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Bus Adda</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="stylesheet" href="departure contact_us.css">
+</head>
+<body>
+    <button class="back-button" onclick="history.back()">&#8592;</button>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>Have questions, feedback, or need assistance? Please fill out the form below, and we'll get back to you as soon as possible.</p>
+
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="35ce68cd-9b96-4256-8769-d0f67156453f">
+            <div class="form-group">
+                
+                <label for="employeename">Employee Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required pattern="^[A-Za-z\s]+$" title="Please enter only letters and spaces">
+                <span class="error-message" id="nameError"></span>
+            </div>
+
+            <div class="form-group">
+                
+                <label for="employeeId">Employee ID:</label>
+                <input type="text" id="employeeId" name="employeeId" placeholder="e.g., 12345" required pattern="[0-9]+" title="Please enter a valid Employee ID (e.g., 12345)">
+                <span class="error-message" id="employeeIdError"></span>
+            </div>
+
+            <div class="form-group">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address (e.g., user@example.com)">
+                <span class="error-message" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+               
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" placeholder="Enter the subject of your inquiry">
+            </div>
+
+            <div class="form-group">
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Enter your message here" required></textarea>
+                <span class="error-message" id="messageError"></span>
+            </div>
+
+            <button type="submit">Send Message</button>
+            <div id="submissionMessage" class="submission-message"></div>
+        </form>
+
+        <div class="contact-info">
+            <h2>Our Contact Information</h2>
+            <p><strong>Email:</strong> contact.busadda@gmail.com</p>
+            <p><strong>Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM IST</p>
+        </div>
+    </div>
+
+    <script src="departure contact_us.js"></script>
+</body>
+</html>

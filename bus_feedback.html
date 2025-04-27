@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Adda | Student Feedback</title>
+  <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+  <div class="feedback-container">
+    <h1>Bus Adda - Student Feedback Form</h1>
+    <p>Please share your experience to help us improve!</p>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="35ce68cd-9b96-4256-8769-d0f67156453f" />
+
+      <h2>🧹 Cleanliness</h2>
+
+      <div class="form-group">
+        <label for="cleanliness-overall">1. Overall cleanliness of the bus:</label>
+        <select id="cleanliness-overall" name="cleanliness-overall" required>
+          <option value="">Select</option>
+          <option>Excellent</option>
+          <option>Good</option>
+          <option>Average</option>
+          <option>Poor</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="floor-cleanliness">2. Was the floor of the bus clean?</label>
+        <select id="floor-cleanliness" name="floor-cleanliness" required>
+          <option value="">Select</option>
+          <option>Always Clean</option>
+          <option>Sometimes Clean</option>
+          <option>Rarely Clean</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="seat-cleanliness">3. Were the seats clean and free from stains?</label>
+        <select id="seat-cleanliness" name="seat-cleanliness" required>
+          <option value="">Select</option>
+          <option>Very Clean</option>
+          <option>Moderately Clean</option>
+          <option>Dirty</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="windows-cleanliness">4. Were the bus windows clean and clear?</label>
+        <select id="windows-cleanliness" name="windows-cleanliness" required>
+          <option value="">Select</option>
+          <option>Very Clean</option>
+          <option>Moderately Clean</option>
+          <option>Dirty</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="odor">5. Was there any unpleasant odor inside the bus?</label>
+        <select id="odor" name="odor" required>
+          <option value="">Select</option>
+          <option>No odor</option>
+          <option>Mild odor</option>
+          <option>Strong odor</option>
+        </select>
+      </div>
+
+      <h2>🛋️ Bus Quality</h2>
+
+      <div class="form-group">
+        <label for="seat-comfort">6. How comfortable were the seats?</label>
+        <select id="seat-comfort" name="seat-comfort" required>
+          <option value="">Select</option>
+          <option>Very Comfortable</option>
+          <option>Comfortable</option>
+          <option>Uncomfortable</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="seat-condition">7. Were the seats intact (no damage)?</label>
+        <select id="seat-condition" name="seat-condition" required>
+          <option value="">Select</option>
+          <option>All seats intact</option>
+          <option>Some minor damages</option>
+          <option>Many damaged seats</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="handrest-condition">8. Were the hand resters on the seats properly attached?</label>
+        <select id="handrest-condition" name="handrest-condition" required>
+          <option value="">Select</option>
+          <option>All hand resters intact</option>
+          <option>Some loose/missing</option>
+          <option>Many broken/missing</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="lights-working">9. Were the lights inside the bus working properly?</label>
+        <select id="lights-working" name="lights-working" required>
+          <option value="">Select</option>
+          <option>All lights working</option>
+          <option>Some lights not working</option>
+          <option>Most lights not working</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="fans-working">10. Were the fans in the bus working properly?</label>
+        <select id="fans-working" name="fans-working" required>
+          <option value="">Select</option>
+          <option>All fans working</option>
+          <option>Some fans not working</option>
+          <option>Most fans not working</option>
+          <option>No fans in the bus</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="ac-performance">11. If AC is available, how was its performance?</label>
+        <select id="ac-performance" name="ac-performance">
+          <option value="">Select</option>
+          <option>Excellent</option>
+          <option>Good</option>
+          <option>Needs improvement</option>
+          <option>Not working</option>
+          <option>No AC available</option>
+        </select>
+      </div>
+
+      <h2>🚌 Ride Experience</h2>
+
+      <div class="form-group">
+        <label for="driver-behavior">12. How was the driver's behavior?</label>
+        <select id="driver-behavior" name="driver-behavior" required>
+          <option value="">Select</option>
+          <option>Very Professional</option>
+          <option>Professional</option>
+          <option>Unprofessional</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="punctuality">13. Was the bus punctual (on time)?</label>
+        <select id="punctuality" name="punctuality" required>
+          <option value="">Select</option>
+          <option>Always on time</option>
+          <option>Sometimes late</option>
+          <option>Mostly late</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="safety-measures">14. Was the driver following all the traffic rules?</label>
+        <select id="safety-measures" name="safety-measures" required>
+          <option value="">Select</option>
+          <option>Always</option>
+          <option>Sometimes</option>
+          <option>Rarely</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="overall-satisfaction">15. Overall satisfaction with the bus service:</label>
+        <select id="overall-satisfaction" name="overall-satisfaction" required>
+          <option value="">Select</option>
+          <option>Very Satisfied</option>
+          <option>Satisfied</option>
+          <option>Neutral</option>
+          <option>Dissatisfied</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="suggestions">16. Any additional suggestions?</label>
+        <textarea id="suggestions" name="suggestions" rows="4" placeholder="Write your feedback here..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Feedback</button>
+    </form>
+  </div>
+</body>
+</html>
