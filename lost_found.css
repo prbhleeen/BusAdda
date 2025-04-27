@@ -11,9 +11,141 @@
   }
 
   body {
-    background: url('aboutUsImages/lost&found.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: linear-gradient(-45deg, #f2efe7, #9acbd0, #48a6a7, #006a71);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
     overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Animated floating circles */
+  .background-circles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .background-circles div {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .circle1 {
+    width: 120px;
+    height: 120px;
+    bottom: 10%;
+    left: 15%;
+    animation-name: floatUpDown;
+    animation-duration: 20s;
+  }
+
+  .circle2 {
+    width: 80px;
+    height: 80px;
+    bottom: 20%;
+    left: 70%;
+    animation-name: floatUpDown;
+    animation-duration: 25s;
+    animation-delay: 5s;
+  }
+
+  .circle3 {
+    width: 150px;
+    height: 150px;
+    bottom: 5%;
+    left: 50%;
+    animation-name: floatUpDown;
+    animation-duration: 30s;
+    animation-delay: 10s;
+  }
+
+  /* Additional animated circles */
+  .circle4 {
+    width: 60px;
+    height: 60px;
+    top: 15%;
+    right: 20%;
+    background: rgba(255, 255, 255, 0.1);
+    animation-name: floatLeftRight;
+    animation-duration: 18s;
+    animation-delay: 2s;
+  }
+
+  .circle4-left {
+    width: 70px;
+    height: 70px;
+    top: 40%;
+    left: 10%;
+    background: rgba(255, 255, 255, 0.12);
+    animation-name: floatUpDown;
+    animation-duration: 20s;
+    animation-delay: 3s;
+  }
+
+  .circle5 {
+    width: 100px;
+    height: 100px;
+    top: 30%;
+    right: 40%;
+    background: rgba(255, 255, 255, 0.12);
+    animation-name: floatLeftRight;
+    animation-duration: 22s;
+    animation-delay: 6s;
+  }
+
+  .circle6 {
+    width: 90px;
+    height: 90px;
+    top: 50%;
+    left: 80%;
+    background: rgba(255, 255, 255, 0.1);
+    animation-name: floatUpDown;
+    animation-duration: 28s;
+    animation-delay: 4s;
+  }
+
+  @keyframes floatUpDown {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-40px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes floatLeftRight {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(40px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
   
 
@@ -63,23 +195,33 @@
   input[type="text"],
   input[type="tel"],
   input[type="datetime-local"],
+  input[type="file"],
   select,
   textarea {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ccc;
+    padding: 14px 18px;
+    border: 1px solid #48a6a7;
     border-radius: 12px;
-    background: #f9f9f9;
-    font-size: 1rem;
+    background: #f2efe7;
+    font-size: 1.1rem;
+    color: #006a71;
     transition: all 0.3s ease;
+  }
+
+  input[type="datetime-local"] {
+    height: 45px;
+    font-weight: 600;
+    color: #006a71;
+    background: #f2efe7;
+    border: 1px solid #48a6a7;
   }
  
   input:focus,
   select:focus,
   textarea:focus {
-    border-color: #004aad;
-    background: #eef6ff;
-    box-shadow: 0 0 8px rgba(0, 74, 173, 0.3);
+    border-color: #48a6a7;
+    background: #e9f1ff;
+    box-shadow: 0 0 8px rgba(72, 166, 167, 0.4);
     outline: none;
   }
  
@@ -89,8 +231,8 @@
 
   .submit-btn {
     width: 100%;
-    background: #004aad;
-    color: #fff;
+    background: #48a6a7;
+    color: #f2efe7;
     padding: 14px;
     border: none;
     border-radius: 14px;
@@ -99,12 +241,13 @@
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(72, 166, 167, 0.5);
   }
   
   .submit-btn:hover {
-    background: #00307a;
+    background: #006a71;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 74, 173, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 106, 113, 0.6);
   }
  
   @media (max-width: 600px) {
