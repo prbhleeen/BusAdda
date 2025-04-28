@@ -26,4 +26,5 @@
 - home page added
 - created separate dashboards for student and guards
 - features added for students: view student profile, bus feedback, lost & found, request a new stop
+- features added for guards: timing monitor, view previous records, apply for leave
   
