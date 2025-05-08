@@ -1,7 +1,7 @@
 
 # Bus Adda 🚏
 
-## A user-friendly web app for registering bus arrivals and departures with real-time tracking.
+## A user-friendly web app for bus guards and college students.
 
 ### 🌟 Features
 
@@ -23,7 +23,7 @@
 
 ---
 
-### 🛠️ Prerequisites
+### 🛠️ Prerequisites to run backend
 
 Make sure the following are installed on your system:
 
